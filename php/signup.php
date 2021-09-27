@@ -1,27 +1,28 @@
 <?php
     session_start();
     include_once "config.php";
-    $member_name = mysqli_real_escape_string($conn, $_POST['member_name']);
-    $phone = mysqli_real_escape_string($conn, $_POST['phone']);
     $email = mysqli_real_escape_string($conn, $_POST['email']);
-    $password = mysqli_real_escape_string($conn, $_POST['password']);
-    if(!empty($member_name) && !empty($phone) && !empty($email) && !empty($password)){
+    $username = mysqli_real_escape_string($conn, $_POST['username']);
+    $phone = mysqli_real_escape_string($conn, $_POST['phone']);
+    $pwd = mysqli_real_escape_string($conn, $_POST['pwd']);
+    $birth = mysqli_real_escape_string($conn, $_POST['birth']);
+    if(!empty($email) && !empty($username) && !empty($phone) && !empty($pwd) && !empty($birth) ){
         //let's check user email is valid or not
         if(filter_var($email, FILTER_VALIDATE_EMAIL)){
             //let's check that email already exist in the database or not
-            $sql = mysqli_query($conn, "SELECT email FROM member WHERE email = '{$email}'");
+            $sql = mysqli_query($conn, "SELECT email FROM users WHERE email = '{$email}'");
             if(mysqli_num_rows($sql) > 0){ //if file is upload
                 echo "$email - This email already exist!";
             }else{
                 // $random_id = rand(time(), 10000000);
                 // $encrypt_pass = md5($password);
                 //let's insert all user data inside table
-                $sql2 = mysqli_query($conn, "INSERT INTO member (member_name,phone,email, password) VALUES ('{$member_name}','{$phone}','{$email}', '{$password}')");
+                $sql2 = mysqli_query($conn, "INSERT INTO users (email,username,phone, pwd,birth) VALUES ('{$email}','{$username}','{$phone}', '{$pwd}', '{$birth}')");
                 if($sql2){ //if these data inserted
-                     $sql3 = mysqli_query($conn, "SELECT * FROM member WHERE email = '{$email}'");
+                     $sql3 = mysqli_query($conn, "SELECT * FROM users WHERE email = '{$email}'");
                      if(mysqli_num_rows($sql3) > 0) {
                          $row = mysqli_fetch_assoc($sql3);
-                         $_SESSION['member_id'] = $row['member_id']; //using this session we user unique_id in other php file
+                         $_SESSION['username'] = $row['username']; //using this session we user unique_id in other php file
                          echo "success";
                      }
                  }else{

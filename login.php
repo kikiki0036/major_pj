@@ -1,6 +1,6 @@
 <?php 
   session_start();
-  if(isset($_SESSION['member_id'])){
+  if(isset($_SESSION['email'])){
     header("location: main.php");
   }
 ?>
@@ -17,7 +17,7 @@
                 </div>
                 <div class="field input">
                     <label>Password</label>
-                    <input type="password" name="password" placeholder="Enter your password">
+                    <input type="password" name="pwd" placeholder="Enter your password">
                     <i class="fas fa-eye"></i>
                 </div>
                 <div class="field button">

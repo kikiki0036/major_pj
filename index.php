@@ -1,6 +1,6 @@
 <?php 
   session_start();
-  if(isset($_SESSION['member_id'])){
+  if(isset($_SESSION['email'])){
     header("location: main.php");
   }
 ?>
@@ -13,21 +13,26 @@
         <div class="error-txt"></div>
           <div class="field input">
             <label>User Name</label>
-            <input type="text" name="member_name" placeholder="User name" required>
+            <input type="text" name="username" placeholder="User name" required>
+          </div>
+          <div class="field input">
+            <label>Email Address</label>
+            <input type="text" name="email" placeholder="Enter your email" required>
           </div>
           <div class="field input">
             <label>Phone</label>
             <input type="text" name="phone" placeholder="Phone" required>
           </div>
-        <div class="field input">
-          <label>Email Address</label>
-          <input type="text" name="email" placeholder="Enter your email" required>
-        </div>
-        <div class="field input">
-          <label>Password</label>
-          <input type="password" name="password" placeholder="Enter new password" required>
-          <i class="fas fa-eye"></i>
-        </div>
+          <div class="field input">
+            <label>birth</label>
+            <input type="date" name="birth" placeholder="Enter your birth" required>
+          </div> 
+          <div class="field input">
+            <label>Password</label>
+            <input type="password" name="pwd" placeholder="Enter new password" required>
+            <i class="fas fa-eye"></i>
+          </div>
+        
         <div class="field button">
           <input type="submit" name="submit" value="Create Account">
         </div>

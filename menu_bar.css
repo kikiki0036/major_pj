@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@200;300;400;500;600;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Kanit', sans-serif;
+
+    /* font-family: 'Poppins', sans-serif; */
+    /* font-family: "DB Gin Siam X"; */
+}
+body,
+html {
+    height: 100%;
+    width: 100%;
+    background: #000000;
+    color: aliceblue;
+    background: linear-gradient(#000000 40%, #540551 210%);
+
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+header {
+    width: 100%;
+    display: flex;
+    position: relative;
+    align-items: center;
+    flex-direction: column;
+}
+header nav {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+header nav .logo {
+    color: #fff;
+    font-size: 30px;
+    width: 20%;
+    height: 100px;
+    padding: 1px 0px 10px 90px;
+    /* background: rgb(255, 111, 67); */
+}
+.logo img{
+    height: 110px;
+    width: 80px;
+}
+header nav .user i {
+    font-size: 40px; 
+}
+header nav .user p {
+    display: block;
+    position: relative;
+    padding: 15px;
+    font-size: 20px;
+}
+header nav .user {
+    color: #fff;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    width: 20%;
+    padding: 60px 90px 1px 0px;
+}
+.menu {
+    /* background: rgb(27, 255, 137); */
+}
+
+.menu_area{
+    height: 10rem;
+    background: linear-gradient(#000000 40%, #540551 210%);
+    position: relative;
+}
+header nav ul {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+header nav li a {
+    color: #fff;
+    display: block;
+    position: relative;
+    padding: 65px 70px 1px;
+    font-size: 20px;
+}
+
+header nav li a:before,
+header nav li a:after {
+    content: "";
+    bottom: 0;
+    width: 0px;
+    height: 2px;
+    display: block;
+    position: absolute;
+    background-color: rgb(255, 219, 15);
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+header nav li a:before {
+    right: 50%;
+}
+
+header nav li a:after {
+    left: 50%;
+}
+
+header nav li a:hover:before,
+header nav li a:hover:after {
+    width: 50%;
+}
