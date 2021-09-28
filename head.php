@@ -12,7 +12,13 @@
             </div>
             
             <div class="user">
-              <p><?php echo $_SESSION['email']; ?></p>
+               <?php 
+                $sql3 = mysqli_query($conn, "SELECT * FROM users WHERE email = '{$email}'");
+                    if(mysqli_num_rows($sql3) > 0) {
+                          $row = mysqli_fetch_assoc($sql3);
+                    }
+               ?>
+              <p><?php echo $row['username']; ?></p>
               <a href="php/logout.php"><i class="fas fa-user-circle" style="color: #ffffff;"></i></a> 
             </div>
         </nav>
