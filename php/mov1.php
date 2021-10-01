@@ -1,11 +1,12 @@
 <?php
     session_start();
     include_once "config.php";
-    $sql = mysqli_query($conn, "SELECT * FROM movie");
+    // SELECT * FROM table WHERE curdate()<date_add(date_field,interval 5 day)
+    $sql = mysqli_query($conn, "SELECT * FROM movie  WHERE curdate()>=getindate");
     $output = "";
 
     if(mysqli_num_rows($sql) == 1){
-        $output .= "No users are available to chat";
+        $output .= "No data";
     }elseif(mysqli_num_rows($sql) > 0){
         while($row = mysqli_fetch_assoc($sql)){
             $output .= '<a href="#">

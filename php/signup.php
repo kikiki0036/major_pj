@@ -22,7 +22,7 @@
                      $sql3 = mysqli_query($conn, "SELECT * FROM users WHERE email = '{$email}'");
                      if(mysqli_num_rows($sql3) > 0) {
                          $row = mysqli_fetch_assoc($sql3);
-                         $_SESSION['username'] = $row['username']; //using this session we user unique_id in other php file
+                         $_SESSION['email'] = $row['email']; //using this session we user unique_id in other php file
                          echo "success";
                      }
                  }else{

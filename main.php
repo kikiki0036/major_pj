@@ -12,6 +12,7 @@
       <div class="mov-list">    
 
       </div>
+      
     </div>      
     <p>โปรแกรมหน้า</p>
     <div  class="container">
@@ -23,8 +24,9 @@
 <div class="foot">
     <div class="logo"><a href="#"><img src="php/image/icon_m.png" alt=""></a></div>
     <p>MINER CINEPLEX</p>
-</div>
+<!-- </div><script src="javascript/mov2.js"></script> -->
 <script src="javascript/mov1.js"></script>
 <script src="javascript/mov2.js"></script>
+
 </body>
 </html>

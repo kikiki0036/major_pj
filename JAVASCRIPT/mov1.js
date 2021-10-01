@@ -8,7 +8,6 @@ setInterval(() =>{
           if(xhr.status === 200){
             let data = xhr.response;   
             usersList.innerHTML = data;
-            usersList2.innerHTML = data;
 
           }
       }

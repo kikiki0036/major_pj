@@ -6,7 +6,7 @@
   }
 ?>
 <?php include_once "head.php"; ?>
-<div class="area_main"> 
+<div class="area_main page2"> 
     <p>ภาพยนตร์</p>
     <div  class="container"  style="margin-left: 120px;">
       <div class="mov-list" style="flex-wrap:wrap ;">    
