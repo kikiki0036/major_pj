@@ -11,12 +11,12 @@
 }
 body,
 html {
-    height: 100%;
-    width: 100%;
+    min-height: fit-content;
+    /* width: 100%; */
     background: #000000;
     color: aliceblue;
-    background: linear-gradient(#000000 40%, #540551 210%);
-
+    background: linear-gradient(#1a0f0f 40%, #540551 210%);
+    overflow-y: auto;
 }
 
 ul,
@@ -27,37 +27,38 @@ ol {
 header {
     width: 100%;
     display: flex;
-    position: relative;
+    position: fixed;
     align-items: center;
     flex-direction: column;
+    opacity: 0.85;
 }
 header nav {
     width: 100%;
     display: flex;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
     align-items: center;
     justify-content: space-between;
 }
 header nav .logo {
     color: #fff;
     font-size: 30px;
-    width: 20%;
+    width: 10%;
     height: 100px;
-    padding: 1px 0px 10px 90px;
+    padding: 5px 0px 10px 50px;
     /* background: rgb(255, 111, 67); */
 }
 .logo img{
-    height: 110px;
-    width: 80px;
+    height: 85px;
+    width: 60px;
 }
 header nav .user i {
-    font-size: 40px; 
+    font-size: 25px; 
 }
 header nav .user p {
     display: block;
     position: relative;
-    padding: 15px;
-    font-size: 20px;
+    padding: 9px;
+    font-size: 15px;
 }
 header nav .user {
     color: #fff;
@@ -65,17 +66,17 @@ header nav .user {
     display: flex;
     align-items: center;
     justify-content: right;
-    width: 20%;
-    padding: 60px 90px 1px 0px;
+    width: 10%;
+    padding: 20px 50px 1px 0px;
 }
 .menu {
-    background: rgb(27, 255, 137);
+    /* background: rgb(27, 255, 137); */
 }
 
 .menu_area{
-    height: 10rem;
+    height: 6rem;
     background: linear-gradient(#000000 40%, #540551 210%);
-    /* position: relative; */
+    position: relative;
 }
 header nav ul {
     display: flex;
@@ -86,8 +87,8 @@ header nav li a {
     color: #fff;
     display: block;
     position: relative;
-    padding: 65px 70px 1px;
-    font-size: 20px;
+    padding: 20px 40px 1px;
+    font-size: 15px;
 }
 
 header nav li a:before,
@@ -115,15 +116,193 @@ header nav li a:hover:before,
 header nav li a:hover:after {
     width: 50%;
 }
-.container{
-    background: rgb(123, 122, 122);
-    width: 100%;
-    height: 50px;
+
+.mov-list a img{
+    overflow: hidden;
+    height: 342px;
+    width:230px;
+    object-fit: cover;
+    border-radius: 5%;
+    border: 0.7px solid beige;    
+    box-shadow: 10px 10px 10px -11px rgba(255, 246, 246, 0.1),
+    10px 10px 10px -11px rgba(233, 91, 240, 0.5);
 }
-.users-list{
-    background: rgb(123, 122, 122);
+.mov2-list a img{
+    overflow: hidden;
+    height: 342px;
+    width:230px;
+    object-fit: cover;
+    border-radius: 5%;
+    border: 0.7px solid beige;    
+    box-shadow: 10px 10px 10px -11px rgba(255, 246, 246, 0.1),
+    10px 10px 10px -11px rgba(233, 91, 240, 0.5);
+}
+
+
+.mov-list ul,li{
+    list-style: none;
+}
+.mov2-list ul,li{
+    list-style: none;
+}
+.area_main  p{
+    margin: 20px 80px;
+    font-size: 30px;
+}
+.area_main{
+    margin-top: 200px;
+}
+.container{
+    max-width: 90%; 
+    height: fit-content;
+    margin: 50px 40px 40px 60px;
+    overflow-x: auto;
+    /* border-right: 1px solid beige;
+    border-left: 1px solid beige; */
+    /* background-color: khaki; */
+   
+}
+/* ----------------------------------- */
+.mov-list{
+    display: flex;
+    align-items: center;
+    width:fit-content;
+    
+}
+.mov2-list{
+    display: flex;
+    align-items: center;
+    width:fit-content;
+}
+
+/* .wrapper img{
+    object-fit: cover;
+    border-radius: 50%;
+} */
+:is(.mov-list , .mov2-list) .content{
+    display: flex;
+    align-items: center;
+}
+:is(.mov-list, .mov2-list) .details{
+    color: rgb(255, 255, 255);
+    margin-left: 15px;
+}
+:is(.mov-list, .mov2-list) .details span{
+    font-size: 18px;
+    font-weight: 500;
+}
+:is(body)::-webkit-scrollbar{
+    display: none;
+    width: 0px;
+}
+:is(.container)::-webkit-scrollbar{
+    width: 80%;
+}
+.mov-list a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 350px;
+    width: 240px;
+    margin-bottom: 15px;
+    page-break-after: 15px;
+    margin:0px 15px;
+    
+}
+.mov2-list a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 350px;
+    width: 240px;
+    margin-bottom: 15px;
+    page-break-after: 15px;
+    margin:0px 15px;
+
+}
+
+.mov-list a .content p{
+    color: #67676a;
+}
+.mov-list a .status-dot{
+    font-size: 12px;
+    color: #468669;
+}
+/* We'll  use this class name in php to show offline status */
+.mov-list a .status-dot.offline{
+    color: #ccc;
+}
+.mov-list a{
+    margin-bottom: 15px;
+    page-break-after: 15px;
+    padding-right: 15px;
+    border-bottom-color: #f1f1f1;
+}
+
+.mov2-list a .content p{
+    color: #67676a;
+}
+.mov2-list a .status-dot{
+    font-size: 12px;
+    color: #468669;
+}
+/* We'll  use this class name in php to show offline status */
+.mov2-list a .status-dot.offline{
+    color: #ccc;
+}
+.mov2-list a{
+    margin-bottom: 15px;
+    page-break-after: 15px;
+    padding-right: 15px;
+    border-bottom-color: #f1f1f1;
+}
+.foot{
+    background:none;
+    border-top:1px solid beige ;
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.foot .logo img{
+    height: 120px;
+    width: 85px;
+}
+.mov-list a .movbutton {
+    position: static;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 170px;
+    margin-left: -200px;
+    margin-top: 270px;
+}
+
+.mov-list a .movbutton input {
     width: 100%;
-    height: 50px;
-    border: 1px solid beige;
-    color: brown;
+    margin-top: 3px;
+    border: none;
+    border-radius: 5px;
+    border: 1px solid rgb(255, 219, 17);
+
+}
+
+.mov2-list a .movbutton {
+    position: static;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 170px;
+    margin-left: -200px;
+    margin-top: 270px;
+}
+.mov2-list a .movbutton input {
+    width: 100%;
+    margin-top: 3px;
+    border: none;
+    border-radius: 5px;
+    border: 1px solid rgb(255, 219, 17);
 }

@@ -10,12 +10,14 @@
         while($row = mysqli_fetch_assoc($sql)){
             $output .= '<a href="#">
                         <div class="content">
-                        <div class="details">
-                            <span>'. $row['movie_name'] .'</span>
-                            <p>This is test message</p>
+                            <div class="details">
+                                <img src="'. $row['poster'] .'" alt="">
+                            </div>
+                            <div class="movbutton">
+                                <input type="button" value="view" style="background:rgb(255, 255, 255)">
+                                <input type="button" value="book" style="background:rgb(206, 165, 0); color: #ffffff;">
+                            </div>
                         </div>
-                        </div>
-                        <div class="status-dot"><i class="fas fa-circle"></i></div>
                         </a>';
         }
     }

@@ -5,10 +5,10 @@
   }
 ?>
 <?php include_once "header.php"; ?>
-<body>
+<body >
     <div class="wrapper">
         <section class="form login">
-            <header>Major</header>
+            <header>Miner</header>
             <form action="#" autocomplete="off">
                 <div class="error-txt"></div>
                 <div class="field input">

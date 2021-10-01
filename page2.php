@@ -6,16 +6,10 @@
   }
 ?>
 <?php include_once "head.php"; ?>
-<div class="area_main">
-    <p>กำลังฉาย</p>
-    <div  class="container">
-      <div class="mov-list">    
-
-      </div>
-    </div>      
-    <p>โปรแกรมหน้า</p>
-    <div  class="container">
-      <div class="mov2-list">    
+<div class="area_main"> 
+    <p>ภาพยนตร์</p>
+    <div  class="container"  style="margin-left: 120px;">
+      <div class="mov-list" style="flex-wrap:wrap ;">    
 
       </div>
     </div>
@@ -24,7 +18,6 @@
     <div class="logo"><a href="#"><img src="php/image/icon_m.png" alt=""></a></div>
     <p>MINER CINEPLEX</p>
 </div>
-<script src="javascript/mov1.js"></script>
-<script src="javascript/mov2.js"></script>
+<script src="javascript/page2.js"></script>
 </body>
 </html>
