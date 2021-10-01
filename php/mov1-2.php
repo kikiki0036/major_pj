@@ -6,7 +6,7 @@
     // SELECT * FROM `movie` ORDER BY `getindate` DESC
     // WHERE  month(getindate) = month(now())
     //month(getindate) = month(now())
-    $sql = mysqli_query($conn, "SELECT * FROM movie WHERE month(getindate) = month(now()) AND curdate()>getindate ORDER BY `getindate` DESC") ;//แสงรายการเดือนปัจจุบันแบบเรียงข้อมูลจากรายการเข้าใหม่ไปรายการเก่า
+    $sql = mysqli_query($conn, "SELECT * FROM movie WHERE month(getindate) != month(now()) AND curdate()>getindate ORDER BY `getindate` DESC") ;//แสงรายการเดือนปัจจุบันแบบเรียงข้อมูลจากรายการเข้าใหม่ไปรายการเก่า
     $output = "";
 
     if(mysqli_num_rows($sql) == 1){

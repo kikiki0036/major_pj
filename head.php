@@ -14,11 +14,11 @@
             <div class="logo"><a href="#"><img src="php/image/icon_m.png" alt=""></a></div>
             <div class="menu">
                 <ul>
-                    <li><a href="main.php#">หน้าหลัก</a></li>
-                    <li><a href="page2.php">ภาพยนตร์</a></li>
-                    <li><a href="#">โรงภาพยนตร์</a></li>
-                    <li><a href="#">ข่าว</a></li>
-                    <li><a href="#">ป๊อบคอร์น/เครื่องดื่ม</a></li>
+                    <li><a id="m1" href="main.php#">หน้าหลัก</a></li>
+                    <li><a id="m2" href="page2.php">ภาพยนตร์</a></li>
+                    <li><a id="m3" href="#">โรงภาพยนตร์</a></li>
+                    <li><a id="m4" href="#">ข่าว</a></li>
+                    <li><a id="m5" href="#">ป๊อบคอร์น/เครื่องดื่ม</a></li>
                 </ul> 
             </div>
             

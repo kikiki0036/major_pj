@@ -8,7 +8,7 @@
         $output .= "No users are available to chat";
     }elseif(mysqli_num_rows($sql) > 0){
         while($row = mysqli_fetch_assoc($sql)){
-            $output .= '<a href="#">
+            $output .= '<a href="#" style="margin-left: -17.99999998999px";>
                         <div class="content">
                             <div class="details" >
                                 <img src="'. $row['poster'] .'" alt="">

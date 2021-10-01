@@ -1,4 +1,4 @@
-<!-- <?php
+<?php
     session_start();
     include_once "config.php";
     $sql = mysqli_query($conn, "SELECT * FROM movie WHERE curdate()<getindate");
@@ -22,4 +22,4 @@
         }
     }
     echo $output;
-?> -->
+?>
