@@ -1,4 +1,4 @@
-const usersList = document.querySelector(".container .mov-list");
+const usersList = document.querySelector(".container2 .mov2-list");
 setInterval(() =>{
       //let's start Ajax
     let xhr = new XMLHttpRequest();//creating XML object

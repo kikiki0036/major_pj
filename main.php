@@ -15,7 +15,7 @@
       
     </div>      
     <p>โปรแกรมหน้า</p>
-    <div  class="container">
+    <div  class="container2">
       <div class="mov2-list">    
 
       </div>
@@ -26,7 +26,7 @@
     <p>MINER CINEPLEX</p>
 <!-- </div><script src="javascript/mov2.js"></script> -->
 <script src="javascript/mov1.js"></script>
-<script src="javascript/mov2.js"></script>
+
 
 </body>
 </html>
