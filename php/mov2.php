@@ -8,7 +8,7 @@
         $output .= "No data";
     }elseif(mysqli_num_rows($sql) > 0){
         while($row = mysqli_fetch_assoc($sql)){
-            $output .= '<a href="#">
+            $output .= '<a href="#" class="aofmovlist">
                         <div class="content">
                             <div class="details">
                                 <img src="'. $row['poster'] .'" alt="">

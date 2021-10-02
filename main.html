@@ -7,29 +7,52 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Major</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
-    <link rel="stylesheet" href="/css/menu_bar.css">
+    <link rel="stylesheet" href="menu_bar.css">
 </head>
 <body>
-    <header >
-        <nav class="menu_area" style="color: #eb2fe4; font-size: 15px; margin-bottom: -15px;">
-            <div class="logo"><a href="#"><img src="/php/icon_m.png" alt=""></a></div>
-            <div class="menu" style="height: 500px; width: 100%;">
-                <ul>
-                    <li><a id="m1" href="#">Home</a></li>
-                    <li><a href="#">Services</a></li>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul> 
-                flex-wrap: wrap;
-
+    <div class="container">
+        <div class="ml-box mlb-cover mov-list" style="height:max-content; ">
+            <!-- //////////////////////// -->
+            <a href="#" class="aofmovlist">
+                <div class="mlbc-hover" style="height: 342px;
+                    width:230px;
+                    object-fit: cover;
+                    border-radius: 10px;  
+                    /* margin:11px 0px 0px 9px; */
+                    color: beige;">
+                    <!-- <a class="add_movie_fav" data-movie-id="2905" href=""><img src=""></a> -->
+                    <!-- <a href=""><img src=""class="mlbc-i-play"></a> -->
+                    <div class="mlbc-name"> คนเรียกผี 3 มัจhhจุราชบงการ </div>
+                    <div class="mlbc-cate"> สยองขวัญ / ระทึกขวัญ</div>
+                    <div class="mlbc-time"> 01 ชม. 53 นาที</div>
+                    <div class="mlbc-sound"> ENG / SUBTITLE</div>
+                    <div class class="mlbc-btn">
+                        <!-- <a href="" class="mlbc-btn-mi">ดูเพิ่มเติม</a>
+                        <a href="" class="mlbc-btn-bn">BUY NOW</a> -->
+                    </div>
+                </div>
+                <div class="content">
+                    <div class="details">
+                        <img src="'. $row['poster'] .'" alt="">
+                    </div>
+                    <div class="movbutton">
+                        <!-- <input type="button" value="view" style="background:rgb(255, 255, 255)">
+                        <input type="button" value="book" style="background:rgb(206, 165, 0); color: #ffffff;"> -->
+                    </div>
+                </div>
+            </a>
+            <!-- /////////////////////// -->
+            <!-- <div class="mlb-date">27 Aug 2021</div>
+            <div class="mlb-name">
+                <a href="">
+                    คนเรียกผี 3 มัจจุราชบงการ
+                </a>
             </div>
-            <div class="field button" style="flex-wrap:wrap ;">
-                <input type="button" value="view" style="background: rgb(206, 165, 0);">
-                <input type="button" value="book" style="background: rgb(255, 255, 255); color: #000; ">
-            </div>
-            <div class="user"><p>art1234567</p><a href="#"><i class="fas fa-user-circle" style="color: #ffffff;"></i></a> </div>
-        </nav>
-    </header>
+            <div class="mlb-genres">
+                <span class="genres_span">สยองขวัญ </span>
+                <span class="genres_span">113 นาที</span>
+            </div> -->
+        </div>
+    </div>
 </body>
 </html>

@@ -11,19 +11,19 @@
 <?php include_once "video.php"; ?>
 <div class="area_main">
     <p>กำลังฉาย</p><p style="text-transform: uppercase;color: #eb2fe4;margin-bottom: -20px; font-size: 20px; text-shadow: 0 1px 3px rgba(255, 255, 255, 0.8);"><?php echo $M.' '.$Y;  ?></p>
-    <div  class="container">
-      <div class="mov-list">    
+    <div class="container">
+      <div class="ml-box mlb-cover mov-list">    
 
       </div>
     </div>   
-    <div  class="container"  style="margin-top: -25px;">
-      <div class="mov1-list">    
+    <div  class="container"  >
+      <div class="ml-box mlb-cover mov1-list">    
 
       </div>
     </div>     
     <p style="margin-top: 5px;">โปรแกรมหน้า</p>
     <div  class="container">
-      <div class="mov2-list">    
+      <div class="ml-box mlb-cover mov2-list">    
 
       </div>
     </div>
