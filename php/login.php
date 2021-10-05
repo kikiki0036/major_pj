@@ -9,7 +9,12 @@
         if(mysqli_num_rows($sql) > 0){ //if users credentials matched
             $row = mysqli_fetch_assoc($sql);
             $_SESSION['email'] = $row['email']; // using this session we user unique_id in other php file
-            echo "success";
+            if($email=="admin@email.com")
+            {
+                echo "admin";
+            }else{
+                echo "user";
+            }
         }else{
             echo "Email or Password is incorrect";
         }

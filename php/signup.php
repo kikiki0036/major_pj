@@ -6,7 +6,7 @@
     $phone = mysqli_real_escape_string($conn, $_POST['phone']);
     $pwd = mysqli_real_escape_string($conn, $_POST['pwd']);
     $birth = mysqli_real_escape_string($conn, $_POST['birth']);
-    if(!empty($email) && !empty($username) && !empty($phone) && !empty($pwd) && !empty($birth) ){
+    if(!empty($email) && !empty($username) && !empty($pwd) && !empty($birth) ){
         //let's check user email is valid or not
         if(filter_var($email, FILTER_VALIDATE_EMAIL)){
             //let's check that email already exist in the database or not

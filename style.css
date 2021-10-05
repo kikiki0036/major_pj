@@ -14,17 +14,29 @@ body{
     align-items: center;
     justify-content: center;
     min-height: 100vh;
+    background-color: rgb(22, 0, 24);
+
     /* background: #f7f7f7; */
 
 }  
 .wrapper{
-    background: rgb(255, 255, 255);
+    background:none;
     width: 450px;
     border-radius: 16px;
-    box-shadow: 0 0 128px 0 rgba(0,0,0,0.1),
-                0 32px 64px -48px rgba(0,0,0,0.5);
+    box-shadow: 0 0 128px 0 rgba(0,0,0,0.1),0 32px 64px -48px rgba(0,0,0,0.5);
+    position: absolute;
+    /* opacity: 0.2; */
+    color: beige;
 }
+.bgform{
+    width: 450px;
+    height: 385px;
+    position: relative;
+    background-color: rgb(9, 9, 9);
+    border-radius: 16px;
+    opacity: 0.8;
 
+}
 /* Signup Form CSS Code*/
 .form{
     padding: 25px 30px;
@@ -74,8 +86,10 @@ form .name-details .field:last-child{
     width: 100%;
     font-size: 16px;
     padding: 0 10px;
-    border: 1px solid #ccc;
+    border: 0px solid rgb(51, 51, 51);
     border-radius: 5px;
+    background-color: rgb(22, 22, 22);
+    color: rgb(136, 136, 136);
 }
 .form form .image input{
     font-size: 17px;
@@ -86,7 +100,7 @@ form .name-details .field:last-child{
     border: none;
     font-size: 17px;
     font-weight: 400;
-    background: #333;
+    background: rgb(177, 13, 136);
     color: #fff;
     border-radius: 5px;
     cursor: pointer;
@@ -111,6 +125,35 @@ form .name-details .field:last-child{
 .form .link a{
     color: #333;
 }
+.form header {
+    color: rgb(214, 0, 214);
+
+}
 .form .link a:hover{
     text-decoration: underline;
+    color: rgb(214, 0, 214);
+}
+.bgicon img{
+    height: 190px;
+    width:136.6px;
+    opacity: 0.4;
+}
+.bgicon img:hover{
+    opacity: 0.8;
+    border: 1px solid rgb(214, 0, 214) ;
+}
+.bgicon{
+    /* background-color: rgb(12, 202, 28); */
+    /* margin-bottom: -190px; */
+}
+.back{
+    /* height:100px;
+    width:100px; */
+    /* background-color: crimson; */
+    display: flex;
+    align-items: center;
+    width:fit-content;
+    flex-wrap:wrap ;
+    position:fixed;
+    background-color: rgb(22, 0, 24);
 }

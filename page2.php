@@ -6,19 +6,16 @@
   }
 ?>
 <?php include_once "head.php"; ?>
-<?php include_once "video.php"; ?>
-<div class="area_main page2"> 
+<!-- <?php include_once "video.php"; ?> -->
+<div class="area_main page2" style="margin-top:180px;"> 
     <p>ภาพยนตร์</p>
-    <div  class="container"  style="margin-left: 56.009px;">
-      <div class="mov-list" style="flex-wrap:wrap ;">    
+    <div  class="container"  style="margin-left: 60px;">
+      <div class="ml-box mlb-cover mov-list" style="flex-wrap:wrap;">    
 
       </div>
     </div>
 </div>
-<div class="foot">
-    <div class="logo"><a href="#"><img src="php/image/icon_m.png" alt=""></a></div>
-    <p>MINER CINEPLEX</p>
-</div>
+<?php include_once "footer.php"; ?>
 <script src="javascript/page2.js"></script>
 </body>
 </html>

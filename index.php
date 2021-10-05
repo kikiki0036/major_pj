@@ -6,11 +6,13 @@
 ?>
 <?php include_once "header.php"; ?>
 <body>
+  <div class="back" ></div>
+  <div class="bgform" style="width: 450px; height: 615px;"></div>
   <div class="wrapper">
     <section class="form signup">
       <header>Register</header>
       <form action="#" enctype="multipart/form-data">
-        <div class="error-txt"></div>
+         <div class="error-txt"></div>
           <div class="field input">
             <label>User Name</label>
             <input type="text" name="username" placeholder="User name" required>
@@ -21,10 +23,10 @@
           </div>
           <div class="field input">
             <label>Phone</label>
-            <input type="text" name="phone" placeholder="Phone" required>
+            <input type="text" name="phone" placeholder="Phone">
           </div>
           <div class="field input">
-            <label>birth</label>
+            <label>Birth</label>
             <input type="date" name="birth" placeholder="Enter your birth" required>
           </div> 
           <div class="field input">
@@ -42,5 +44,7 @@
   </div>
     <script src="JAVASCRIPT/pass-show-hide.js"></script>
     <script src="JAVASCRIPT/signup.js"></script>
+    <script src="JAVASCRIPT/bg.js"></script>
+
 </body>
 </html>
