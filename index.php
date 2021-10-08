@@ -7,7 +7,7 @@
 <?php include_once "header.php"; ?>
 <body>
   <div class="back" ></div>
-  <div class="bgform" style="width: 450px; height: 615px;"></div>
+  <div class="bgform" style="width: 450px; height: 615px; margin-left:0px;"></div>
   <div class="wrapper">
     <section class="form signup">
       <header>Register</header>

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  *{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+  }
+  body{
+    width: 100%;
+    height: 100%;
+  }
+  .box-input{
+    background-color: rgb(63, 63, 63);
+    width: 45%;
+    height: 55px;
+    padding: 5px 30px;
+    border-radius: 15px;
+    margin-left: 200px;
+    margin-top: 200px;
+    color: rgb(247, 247, 247);
+  }
+  .field {
+    display: flex;
+    align-items: center;
+  }
+  .field label{
+    width: 70px;
+    height: fit-content;
+    margin-right: 10px;
+  }
+  .field select{
+    height: 33px;
+    padding: 0 4px;
+    width: 80px;
+    text-align: center;
+    outline: none;
+    border: none;
+    border-radius: 15px;
+    color: rgb(16, 139, 221);
+    background-color: rgb(255, 255, 255);
+    margin-left: 20px;
+    margin-right: 5px;
+  }
+  .field select option{
+    color: rgb(49, 49, 49);
+    background-color: rgb(255, 255, 255);
+    border: none;
+    text-align: left;
+    padding: 0 5px;
+  }
+  .field .closebtn{
+    color: rgb(19, 1, 15);
+    font-weight: 900;
+    font-size: 15px;
+    width: 20px;
+    height: 20px;    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: none;
+    cursor: pointer;
+    position: absolute;
+    margin-top: 7px;
+    margin-left: 5px;
+  
+    /* margin-left: 2px; */
+  }
+  .opt{
+    background-color: rgb(255, 255, 255);
+    width: fit-content;
+    height: fit-content;
+    border: none;
+    border-radius:17px;
+    margin-right: 5px;
+    display: block;
+
+  }
+  .plus{
+    background-color: rgb(255, 255, 255);
+    color: darkgray;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+    border-radius: 10px;
+  }
+</style>
+<body>
+  <div class="box-input">
+    <div class="field input">
+      <label for="genre">Genre</label>   
+      <span class="plus" onclick="Fplusgenre()"">&times;</span> 
+      <div class="opt" id="genre1"  style="display:block;">        
+        <!-- <span class="closebtn" onclick="Fgenre('genre1')""></span>  -->
+        <select name="genre1" id="genre01" placeholder="genre" required style="margin-left: 10px;width: 90px;" >
+          <option value="ตลก">ตลก</option>
+          <option value="สยองขวัญ">สยองขวัญ</option>
+          <option value="น 15+">น 15+</option>
+          <option value="น 18+">น 18+</option>
+          <option value="ฉ 20+">ฉ 20+</option>
+          <option value="ส ส่งเสริม">ส ส่งเสริม</option>
+        </select>
+      </div>   
+      <div class="opt" id="genre2" style="display:none;">        
+        <span class="closebtn" onclick="Fgenre('genre2')"">&times;</span> 
+        <select name="genre2" id="genre02" placeholder="genre" >
+          <option value="สยองขวัญ">สยองขวัญ</option>
+          <option value="สยองขวัญ">สยองขวัญ</option>
+          <option value="น 15+">น 15+</option>
+          <option value="น 18+">น 18+</option>
+          <option value="ฉ 20+">ฉ 20+</option>
+          <option value="ส ส่งเสริม">ส ส่งเสริม</option>
+        </select>
+      </div>   
+      <div class="opt" id="genre3" style="display:none;">        
+        <span class="closebtn" onclick="Fgenre('genre3')"">&times;</span> 
+        <select name="genre3" id="genre3" placeholder="genre" >
+          <option value="สยองขวัญ">สยองขวัญ</option>
+          <option value="สยองขวัญ">สยองขวัญ</option>
+          <option value="น 15+">น 15+</option>
+          <option value="น 18+">น 18+</option>
+          <option value="ฉ 20+">ฉ 20+</option>
+          <option value="ส ส่งเสริม">ส ส่งเสริม</option>
+        </select>
+      </div>   
+      <div class="opt" id="genre4" style="display:none;">        
+        <span class="closebtn" onclick="Fgenre('genre4')"">&times;</span> 
+        <select name="genre4" id="genre3" placeholder="genre" >
+          <option value="สยองขวัญ">สยองขวัญ</option>
+          <option value="สยองขวัญ">สยองขวัญ</option>
+          <option value="น 15+">น 15+</option>
+          <option value="น 18+">น 18+</option>
+          <option value="ฉ 20+">ฉ 20+</option>
+          <option value="ส ส่งเสริม">ส ส่งเสริม</option>
+        </select>
+      </div>  
+      <div class="opt" id="genre5" style="display:none;">        
+        <span class="closebtn" onclick="Fgenre('genre5')"">&times;</span> 
+        <select name="genre5" id="genre3" placeholder="genre" >
+          <option value="สยองขวัญ">สยองขวัญ</option>
+          <option value="สยองขวัญ">สยองขวัญ</option>
+          <option value="น 15+">น 15+</option>
+          <option value="น 18+">น 18+</option>
+          <option value="ฉ 20+">ฉ 20+</option>
+          <option value="ส ส่งเสริม">ส ส่งเสริม</option>
+        </select>
+      </div>  
+    </div>
+  </div>
+  <script>
+    let genre = ['genre1','genre2','genre3','genre4','genre5'];
+    let genrest = ['on','off','off','off','off'];
+    function Fgenre(e) {
+      if(e!='genre1')
+      {
+        document.getElementById(e).style.display = "none";
+        for(i in genre){
+          if(e==genre[i]){
+             genre[i]='off';
+             break;
+          }
+        }
+
+      }
+      console.log(genre);
+    }
+    let str='genre';
+    function Fplusgenre() {
+      let nstr;
+      let n=0,m=0;
+      for(i in genre){
+          if('off'== genre[i]){
+             m=n+1;
+             console.log(m);
+             nstr = str+(m); 
+             console.log(nstr);
+             genre[i]= nstr;
+             console.log(genre); 
+             document.getElementById(nstr).style.display = "block";
+             n=0;m=0;
+             break;
+          }
+          n++;
+      }
+      console.log(n);
+      if(n==5){
+        n=0;m=0;
+        for(i in genrest){
+          if('off'==genrest[i]){
+            m=n+1;
+            let strn = str + m;
+            genrest[i]='on';
+            document.getElementById(strn).style.display = "block";
+            n=0;m=0;
+            console.log(genrest);
+            break;
+          }
+          n++;
+        }
+      }
+      console.log(genrest);
+    }
+    </script>
+</body>
+</html>

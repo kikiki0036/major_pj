@@ -32,18 +32,19 @@
                                 <img src="php/image/'.$row['movie_name'].'.jpg" alt="">
                             </div>
                             <div class="details">
-                                <p style="width: 200px;">'.$row['movie_name'].'</p>
-                                <p style="width: 120px;">'.$new_date.'</p>
-                                <p style="width: 50px;">'.$row['rate'].'</p>
-                                <p style="width: 280px;">'.$row['genre'].'</p>
-                                <p style="width: 120px;">'.$h.' ชม. '.$m.' นาที</p>
+                                <p style="font-weight: 800;">'.$row['movie_name'].'</p>
+                                <p>'.$new_date.'</p>
+                                <p class="d_rate">'.$row['rate'].'</p>
+                                <p>'.$row['genre'].'</p>
+                                <p>'.$h.' ชม. '.$m.' นาที</p>
                             </div>
                             <div class="edit">
-                                <a href="detail_mov.php?movie_id='.$row['movie_id'].'" class="list-btn" role="button" ><i class="fas fa-edit"></i></a>
-                                <a href="php/hide.php?movie_id='.$row['movie_id'].'" class="list-btn2" ><i class="fas fa-minus-circle"></i></a>
+                                <a href="detail_mov.php?movie_id='.$row['movie_id'].'" class="list-btn" role="button" target="iframe_target"><i class="fas fa-edit"></i></a>
+                                <a href="php/hide.php?movie_id='.$row['movie_id'].'" class="list-btn2" role="button" target="iframe_target"><i class="fas fa-minus-circle"></i></a>
                             </div>
                         </div>';
         }
     }
     echo $output;
 ?>
+<!-- color: rgb(250, 42, 226);  -->

@@ -1,4 +1,4 @@
-const movList12 = document.querySelector(".container .mov1-list");
+const movList1 = document.querySelector(".container .mov1-list");
 // setInterval(() =>{
       //let's start Ajax
     let xhr1 = new XMLHttpRequest();//creating XML object
@@ -7,7 +7,7 @@ const movList12 = document.querySelector(".container .mov1-list");
       if(xhr1.readyState === XMLHttpRequest.DONE){
           if(xhr1.status === 200){
             let data1 = xhr1.response;   
-            movList12.innerHTML = data1;
+            movList1.innerHTML = data1;
 
           }
       }

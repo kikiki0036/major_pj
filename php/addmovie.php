@@ -6,10 +6,10 @@
     $getindate = mysqli_real_escape_string($conn, $_POST['getindate']);
     $getoutdate = mysqli_real_escape_string($conn, $_POST['getoutdate']);
     $genre = mysqli_real_escape_string($conn, $_POST['genre']);
-    $rate = "น 15+";
+    $rate = mysqli_real_escape_string($conn, $_POST['rate']);
     $time = mysqli_real_escape_string($conn, $_POST['time']); 
     $teaser = mysqli_real_escape_string($conn, $_POST['teaser_id']);
-    if(!empty($mname) && !empty($synopsis) && !empty($getindate) && !empty($getoutdate)&& !empty($genre)&& !empty($time)&& !empty($teaser))
+    if(!empty($mname) && !empty($synopsis) && !empty($getindate) && !empty($getoutdate)&& !empty($genre)&& !empty($time)&& !empty($teaser)&& !empty($rate))
     {
             //let's check that email already exist in the database or not
             $sql = mysqli_query($conn, "SELECT movie_name FROM movie WHERE movie_name = '{$mname}'");

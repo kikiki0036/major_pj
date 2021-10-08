@@ -99,34 +99,34 @@ header nav li a {
     /* color: teal; */
     font-weight: 600;
     margin-left: -1px;
-    text-shadow: 0 50px 35px rgb(255, 255, 255);
+    text-shadow: 0 20px 35px rgb(251, 255, 15);
 }
 #m2:hover{
     /* color: teal; */
     font-weight: 600;
     margin-left: -1px;
-    text-shadow: 0 50px 35px rgb(255, 255, 255);
+    text-shadow: 0 20px 35px rgb(251, 255, 15);
 }
 
 #m3:hover{
     /* color: teal; */
     font-weight: 600;
     margin-left: -1px;
-    text-shadow: 0 50px 35px rgb(255, 255, 255);
+    text-shadow: 0 20px 35px rgb(251, 255, 15);
 }
 
 #m4:hover{
     /* color: teal; */
     font-weight: 600;
     margin-left: -1px;
-    text-shadow: 0 50px 35px rgb(255, 255, 255);
+    text-shadow: 0 20px 35px rgb(251, 255, 15);
 }
 
 #m5:hover{
     /* color: teal; */
     font-weight: 600;
     margin-right: -3px;
-    text-shadow: 0 50px 35px rgb(255, 255, 255);
+    text-shadow: 0 20px 35px rgb(251, 255, 15);
 }
 
 header nav li a:before,
@@ -537,7 +537,7 @@ img.mlb-img {
     height: 100%;
     padding: 10px;
     text-align: left;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(2, 0, 2, 0.8);
     -webkit-transition: all 0.4s ease 0s;
     -moz-transition: all 0.4s ease 0s;
     -ms-transition: all 0.4s ease 0s;
@@ -735,7 +735,7 @@ img.mlb-img {
     position:relative;
 }
 .profile-area{
-    height: 500px;
+    height: 504px;
     margin-top: 150px;
     width: 70%;
     margin-left: 14%;
@@ -811,5 +811,8 @@ img.mlb-img {
     margin-top: -55px;
     margin-bottom: -15px;
 }
+.error-txt{
+    position: absolute;
+    color: #dd4b3a;
+}
 /* ???????????????????????????????????????????????? */
- 

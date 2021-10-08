@@ -7,6 +7,5 @@
   <title>Miner Cineplex</title>
   <link rel="stylesheet" href="style.css">
   <link rel="shortcut icon" type="images/x-icon" href="php/image/icon_m.png">
-
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
 </head>
