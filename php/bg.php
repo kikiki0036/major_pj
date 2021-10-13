@@ -12,7 +12,7 @@
         $num=0;
         while($row = mysqli_fetch_assoc($sql)  ){
             $output .= '<div class="bgicon"" >               
-                            <img src="php/image/'.$row['movie_name'].'.jpg" alt="" >
+                            <img src="php/image/'.$row['poster'].'" alt="" >
                         </div>';
             if($num == 29){
                 break;

@@ -1,49 +1,114 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-.alasdert {
-  padding: 20px;
-  background-color: #f44336;
-  color: white;
-}
-.alasdert1 {
-  padding: 20px;
-  background-color: #b536f4;
-  color: white;
-}
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+  <style>
+    /*Emre Ertan - Frontend Developer - https://www.emreertan.com*/
 
-.closebtn {
-  margin-left: 15px;
-  color: white;
-  font-weight: bold;
-  float: right;
-  font-size: 22px;
-  line-height: 20px;
-  cursor: pointer;
-  transition: 0.3s;
-}
 
-.closebtn:hover {
-  color: black;
-}
-</style>
+
+    * {
+      margin: 0;
+      outline: none;
+      border: none;
+      padding: 0;
+      user-select: none;
+    }
+
+    body {
+      background: #212121;
+    }
+
+    .container {
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      margin-left: 800px;
+    }
+
+    .dropdown {
+      position: relative;
+      width: 150px;
+      height: 50px;
+      background: #F0F0F0;
+      border-radius: 15px;
+      cursor: pointer;
+      font-family: 'Rubik', sans-serif;
+      font-size: 20px;
+      color: #444;
+      text-align: center;
+      line-height: 50px;
+    }
+
+    #drop {
+      width: 145px;
+      height: 200px;
+      border-radius: 15px;
+      background: #F0F0F0;
+      visibility: hidden;
+      opacity: 0;
+      transform: translateY(0);
+      transform-origin: 0% 0%;
+      transition: 0.3s;
+      display: grid;
+      align-items: center;
+    }
+
+    #drop li {
+      list-style: none;
+      /* transition: all 0.3s; */
+      width: 70%;
+      margin: auto;
+      text-align: center;
+    }
+
+    #drop li:hover {
+      transform: translateX(10px);
+    }
+
+    #drop li a {
+      font-family: 'Rubik', sans-serif;
+      font-size: 20px;
+      color: #444;
+      text-decoration: none;
+    }
+
+    #drop li:hover a {
+      color: #456ead;
+    }
+
+    #menu {
+      display: none;
+    }
+
+    #menu:checked~ul {
+      visibility: visible;
+      opacity: 1;
+      /* transform: translateY(1rem);
+      transition: 0.3s; */
+    }
+  </style>
 </head>
+
 <body>
-
-<h2>Alert Messages</h2>
-<p>Click on the "x" symbol to close the alert message.</p>
-<div class="alasdert" id="dd">
-  <span class="closebtn" onclick="sd.parentElement.style.display='none';">&times;</span> 
-  <input type="text" >
-</div>
-<p>Click on the "x" symbol to close the alert message.</p>
-<div class="alasdert1" name="sd">
-  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
-  <input type="text" >
-</div>
-
-
+  <div class="container">
+    
+    <label class="dropdown" for="menu"><i class="fas fa-user-circle" style="color: #e63a3a;"></i></label>
+    <input type="checkbox" id="menu">
+    <ul id="drop">
+      <li><a href="">Home</a></li>
+      <li><a href="">Blog</a></li>
+      <li><a href="">About</a></li>
+      <li><a href="">Forum</a></li>
+      <li><a href="">Contact</a></li>
+    </ul>
+  </div>
 </body>
+
 </html>

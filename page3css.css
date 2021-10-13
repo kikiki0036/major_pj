@@ -1,0 +1,70 @@
+
+/* <div  class="containerpage3"  style="margin-left: 60px;">
+    <div class="area-branch">    
+        <div class="area-branch-box">
+            <img src="php/image/icon_m.png" alt="">
+            <a href="">Branch Name Location</a>
+        </div>
+    </div>
+</div> */
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@200;300;400;500;600;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Kanit', sans-serif;
+}
+html,body{
+    width: 100%;
+}
+.page3{
+    width: 100%;
+    margin-left: -60px;
+}
+.page3 p {
+    font-size: 5px;
+    margin-left: 50px;
+}
+.containerpage3{
+    height: fit-content;
+    width: 100%;
+    padding: 5px 5px;
+    margin-top: 15px;
+}
+.area-branch{
+    height: fit-content;
+    width:fit-content;
+    padding: 0 5px;
+    display: flex;
+    flex-wrap: wrap;
+
+}
+.area-branch-box{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 270px;
+    padding: 5px 5px;
+    margin-left: 18px;
+    margin-bottom: 45px;
+}
+.area-branch-box:hover{
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 2px 3px rgba(2, 2, 2, 0.4),
+    inset 0 -2px 2px 1px rgb(0, 0, 0),
+    inset 0 -1px 1px 1px rgb(0, 0, 0);
+    background-image: linear-gradient(160deg, #43434338, #0e0e0e, #3a3a3a2f, #3d3d3d23, #1a1a1a1c);
+    text-shadow: 0 2px 2px rgb(9, 9, 9);
+    color: rgb(68, 68, 68);
+}
+.area-branch-box img{
+    width: 40px;
+    height: auto;
+}
+.area-branch-box a{
+    width: 70%;
+    margin-left: 5px;
+    font-size: 13px;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+}

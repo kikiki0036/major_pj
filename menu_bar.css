@@ -137,6 +137,7 @@ header nav li a:after {
     height: 2px;
     display: block;
     position: absolute;
+    /* background:#ffcc00; */
     background-color: rgb(255, 219, 15);
     -webkit-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
@@ -228,8 +229,9 @@ header nav li a:hover:after {
     color: rgb(255, 255, 255);
 }
 .area_main{
-    margin-top: -25px;
+    margin-top: -250px;
 }
+
 .container{
     max-width: 100%; 
     height: fit-content;
@@ -257,6 +259,20 @@ header nav li a:hover:after {
     align-items: center;
     width:fit-content;
 }
+.genre-list{
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    width: 190px;
+    margin-top: -20px;
+    margin-left: 10px;
+  }
+  .genre-list-box{
+    margin: 0 2px;
+    padding: 0 3px;
+    font-size: 13px;
+    color: rgb(250, 243, 232);
+  }
 
 /* .wrapper img{
     object-fit: cover;
@@ -523,6 +539,12 @@ img.mlb-img {
 }
 
 .mlbc-hover {
+    /* box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 2px 3px rgba(2, 2, 2, 0.4),
+    inset 0 -2px 2px 1px rgb(0, 0, 0),
+    inset 0 -1px 1px 1px rgb(0, 0, 0);
+    background-image: linear-gradient(160deg, #afafafad, #090909, #0e0e0ee2, #161616e2, #1a1a1ac9);
+    text-shadow: 0 2px 2px rgb(9, 9, 9); */
+    
     opacity: 0;
     position:relative;
     /* margin:10px 30px 0px -15px; */
@@ -566,8 +588,9 @@ img.mlb-img {
 }
 
 .mlbc-cate {
-    font-size: 13px;
+    font-size: 12.5px;
     margin-top: 10px;
+    
 }
 
 .mlbc-time,
@@ -605,8 +628,13 @@ img.mlb-img {
 .mlbc-btn-mi,
 .mlbc-btn-mi:hover,
 .mlbc-btn-mi:focus {
-    background-color: #fff;
-    color: #000;
+    box-shadow: 0 3px 6px rgba(0,0,0,.16), 0 2px 3px rgba(110,80,20,.4),
+        inset 0 -2px 2px 1px rgb(177, 177, 177),
+        inset 0 -1px 1px 1px rgb(235, 235, 235);
+    background-image: linear-gradient(160deg, #c9c9c9, #a5a5a5, #ffffff, #d3d3d3, #ffffff);
+    border: 1px solid #828282;
+    color: rgb(84, 84, 84);
+    text-shadow: 0 2px 2px rgb(170, 170, 170);
     display: block;
     text-align: center;
     border-radius: 5px;
@@ -615,14 +643,28 @@ img.mlb-img {
     margin-bottom: 5px;
     padding: 2px;
     width: 90%;
+    opacity: 0.8;
 
 }
+.mlbc-btn-mi:focus,
+.mlbc-btn-mi:hover {
+  /* background-size: 150% 150%; */
+  box-shadow: 0 10px 20px rgba(255, 255, 255, 0.19), 0 1px 3px rgba(46, 46, 46, 0.23),
+                inset 0 -2px 1px 1px #ffffff,
+                inset 0 -1px 1px 1px rgb(216, 216, 216);
+                opacity: 1;
+}
+
 .mlbc-btn-bn,
 .mlbc-btn-bn:hover,
 .mlbc-btn-bn:focus {
-    background-color: #e40bc7;
-    color: #fff;
-    text-shadow: 0 0 5px rgba(69, 255, 252, 0.5);
+    box-shadow: 0 3px 6px rgba(0,0,0,.16), 0 2px 3px rgba(110,80,20,.4),
+        inset 0 -2px 2px 1px rgba(139,66,8,1),
+        inset 0 -1px 1px 1px rgba(250,227,133,1);
+    background-image: linear-gradient(160deg, #a54e07, #b47e11, #fef1a2, #bc881b, #a54e07);
+    border: 1px solid #a55d07;
+    color: rgb(120,50,5);
+    text-shadow: 0 2px 2px rgba(250, 227, 133, 1);
     display: block;
     text-align: center;
     border-radius: 5px;
@@ -631,7 +673,26 @@ img.mlb-img {
     margin-bottom: 20px;
     padding: 2px;
     width: 90%;
+    opacity: 0.8;
 }
+.mlbc-btn-bn + .mlbc-btn-bn { margin-top: 1em; }
+
+.mlbc-btn-bn:focus,
+.mlbc-btn-bn:hover {
+  /* background-size: 150% 150%; */
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 1px 3px rgba(0,0,0,0.23),
+                inset 0 -2px 1px 1px #b17d10,
+                inset 0 -1px 1px 1px rgba(250,227,133,1);
+  border: 1px solid rgba(165,93,7,.6);
+  color: rgba(120,50,5,.8);
+  opacity: 1;
+}
+.mlbc-btn-bn:active {
+  box-shadow: 0 3px 6px rgba(0,0,0,.16), 0 3px 6px rgba(110,80,20,.4),
+              inset 0 -2px 5px 1px #b17d10,
+                inset 0 -1px 1px 3px rgba(250,227,133,1);
+}
+
 /* .mlbc-btn {
     position: absolute;
     bottom: 10px;
@@ -736,12 +797,37 @@ img.mlb-img {
 }
 .profile-area{
     height: 504px;
-    margin-top: 150px;
+    margin-top: 120px;
     width: 70%;
     margin-left: 14%;
     border-radius: 15px;
-    background-color: rgba(38, 38, 38, 0.8);
-    opacity: .8;
+    background-color: rgb(0, 0, 0);
+    opacity: 0.5;
+}
+.nof{
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    position: absolute;
+    bottom: 5px;
+    background: none;
+}
+.alert{
+    background-color: #000000;
+    opacity: .6;
+    width: 400px;
+    height: 50px;
+    /* position: absolute; */
+    bottom: 20px; 
+    left: 483px;
+    text-align: center;
+    margin-bottom: 5px;
+}
+.alert p {
+    margin-top: 11px;
 }
 .profile-area p{
     margin-left: 20px;
@@ -749,7 +835,7 @@ img.mlb-img {
     color: #eb1de4;;
 }
 .profile-detail{
-    color: rgb(206, 206, 206);
+    color: rgb(243, 243, 243);
     position: absolute;
     height: 400px;
     width: 70%;
@@ -762,7 +848,7 @@ img.mlb-img {
     margin-top: -460px;
 }
 .profile-detail p:hover{
-    color: cornsilk;
+    color: rgb(255, 255, 255);
 
 }
 .profile-detail p{
@@ -770,12 +856,73 @@ img.mlb-img {
     font-size: 18px;
 
 }
-.profile-detail span{
+.profile-detail input{
     font-size: 18px;
     position: relative;
     margin-left: 25px;
     margin-top: -5px;
+    outline: none;
+    background: none;
+    border: none;
+    width: 380px;
+    color: #969595;
+    text-shadow: 0 1px 2px rgba(46, 46, 46, 0.8);
 }
+/* .profile-detail .detail-edit button{
+    position: absolute;
+    width:20px;
+    height:20px;
+    margin-left: 750px;
+    opacity: .5;
+    background: none;
+} */
+.profile-detail .detail-edit div input{
+   /* background-color: #ff230b; */
+   margin-left: -18px;
+   width:15px;
+   height:15px;
+   margin-top: 6px;
+   position: static;
+   cursor: pointer;
+
+}
+
+.profile-detail .detail-edit div{
+    height: 20px;
+    width: 20px;
+    margin-left: 770px;
+    margin-top:23px ;
+    position: absolute;
+    /* margin-bottom: 13px; */
+    /* background: none; */
+}
+.profile-detail .detail-edit div:hover{
+    opacity: 0.5;
+}
+.profile-detail .detail-edit div input .fa-save{
+    width:15px;
+    height:15px;
+}
+.profile-detail .detail-edit .fa-window-close{
+    position: absolute;
+    margin-top: 33px;
+    left:850px;
+    cursor: pointer;
+    color: rgb(206, 206, 206);
+}
+.profile-detail .detail-edit .fa-edit{
+    position: absolute;
+    margin-top: 33px;
+    left:850px;
+    cursor: pointer;
+    color: rgb(206, 206, 206);
+}
+.profile-detail .detail-edit i:hover{
+  
+    transition: all 0.4s ease 0s;
+    color: #707070;
+}
+
 .box-detail{
     border:none;
     display: flex;
@@ -816,3 +963,197 @@ img.mlb-img {
     color: #dd4b3a;
 }
 /* ???????????????????????????????????????????????? */
+.list-btn-p {
+    margin-left: 20px;
+    color: #ffffff;
+
+}
+
+.list-btn-p:hover {
+    margin-left: 20px;
+    color: #ffdf28;
+    text-shadow: 0 0 7px rgb(255, 204, 0);
+}
+
+.opt{
+    background-color: rgb(255, 255, 255);
+    width: fit-content;
+    height: fit-content;
+    border: none;
+    border-radius:17px;
+    margin-right: 5px;
+    display: block;
+}
+
+.opt option{
+    color: #000000;
+    text-align: left;
+}
+/* //edit-movie// */
+.popedit{
+    position: absolute;
+    width: 1250px;
+    height: 450px;
+    background-color: rgba(0, 0, 0, 0.583);
+    border: 1px solid beige;
+    border-radius: 10px;
+    opacity: 0.3;
+    margin-top: 5px;
+    margin-left: -10px;
+    box-shadow: inset 0px 0px 10px rgba(126, 126, 126, 0.9);
+}
+.popedit .pop-in{
+
+}
+.popedit i{
+    position: static;
+    color: black;
+    width: 25px;
+    height: 25px;
+    padding-left: 6.5px;
+    padding-top: 4.7px;
+    cursor: pointer;
+    background-color: #fff;
+    border-radius: 15px;
+    margin-left: 10px;
+    margin-top: 8px;
+    text-shadow: none;
+}
+.containerprofile{
+    position: absolute;
+    left: 1150px;
+    background: #000000;
+    top: 80px;
+}
+/* .dropdown {
+    position: relative;
+    width: 150px;
+    height: 50px;
+    background: #F0F0F0;
+    border-radius: 15px;
+    cursor: pointer;
+    font-family: 'Rubik', sans-serif;
+    font-size: 20px;
+    color: #444;
+    text-align: center;
+    line-height: 50px;
+  } */
+
+  #dropp {
+    width: 145px;
+    height: fit-content;
+    border-radius: 5px;
+    /* visibility: hidden; */
+    transform: translateY(3);
+    transform-origin: 5% 5%;
+    transition: 0.5s;
+    align-items: center;
+    text-shadow: none;
+    
+    padding: 5px;
+    
+  }
+
+  #dropp li {
+    list-style: none;
+    transition: all 0.3s;
+    width: 70%;
+    margin: auto;
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 5px;    
+  }
+
+  #dropp li:hover {
+    transform: translateX(10px);
+  }
+
+  #dropp li a {
+    font-size: 15px;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+  }
+
+  #dropp li:hover a {
+    color: #999999;
+  }
+
+/* ///page3 style/// */
+/* <div class="page3" style="margin-top:140px;"> 
+     <p id="title-page3">โรงภาพยนตร์</p>
+     <div  class="containerpage3"  style="margin-left: 60px;">
+      <div class="area-branch">    
+            <div class="area-branch-box">
+              <img src="php/image/icon_m.png" alt="">
+              <a href="">Branch Name Location</a>
+          </div>
+      </div>
+    </div>
+</div> */
+.page3{
+    width: 100%;
+    height: fit-content;
+    padding: 50px 85px; 
+    margin-top: 90px;
+}
+.page3 iframe{
+    height: 800px;
+    width:  1190px;
+    margin-top: 20px;
+    border: none;
+    overflow: hidden;
+    
+}
+.menu-branch{
+    margin-top: 10px;
+}
+.menu-branch ul{
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+}
+.menu-branch li{
+    list-style: none;
+}
+.menu-branch li a{
+    font-size: 17px;
+    color: #ffffff;
+}
+#title-page3{
+    font-size: 28px;
+}
+/* 
+<div class="area-showtime" style="margin-top: 170px;" >
+    <p style="margin-top: -90px;">SHOWTIMES</p>
+    <div class="showtime">
+      <div class="showtime-box">
+            
+      </div>
+
+    </div>
+   
+</div> */
+.area-showtime{
+    background-color: tomato;
+    width: 100%;
+    height: 550px;
+}
+.area-showtime p{
+     margin-left: 90px;
+     font-size: 40px;
+     font-weight: 500;
+}
+.showtime{
+    background-color: teal;
+    width: 90%;
+    height:fit-content;
+    margin-left: 5%;
+    display: flex;
+    flex-direction: column;
+    padding: 10px 20px;
+}
+.showtime-box{
+    background-color: rgb(71, 114, 255);
+    height: 7rem;
+
+}

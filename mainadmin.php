@@ -9,39 +9,52 @@
 ?>
 <?php include_once "headadmin.php"; ?>
 <iframe id="iframe_target" name="iframe_target" src="#" style="width:0;height:0;border:0px solid #fff;"></iframe>
-<div class="area_main" style="margin-top: 170px;" >
-    <p style="margin-top: -90px;">DATA MOVIE<a href="addmovie.php" class="list-btn-p" ><i class="fas fa-plus-circle"></i></a></p>
+<script>
+    document.getElementById("m1").style.color = "#ffcc00";
+</script>
+<div class="area_main" style="margin-top: 120px;" >
+    <p style="margin-top: -50px;font-size: 40px;font-weight: 500;">DATA MOVIE<a href="addmovie.php" class="list-btn-p" ><i class="fas fa-plus-circle"></i></a></p>
     
-    <form name="frmMain" method="post" action="search.php" target="iframe_target">  
-       
+    <div name="frmMain"class="form" >  
         <div class="filter"> 
-            <label for="Month">Month :</label>
-            <select name="Month" id="Month">
-                <option value="Jan">Jan</option>
-                <option value="Feb">Feb</option>
-                <option value="Mar">Mar</option>
-                <option value="Apr">Apr</option>
-                <option value="May">May</option>
-                <option value="Jun">Jun</option>
-                <option value="Jul">Jul</option>
-                <option value="Aug">Aug</option>
-                <option value="Sept">Sept</option>
-                <option value="Oct">Oct</option>
-                <option value="Nov">Nov</option>
-                <option value="Dec">Dec</option>
-            </select>
-            <label for="Year">Year :</label>
-            <select name="Year" id="Year">
-                <option value="2020">2020</option>
-                <option value="2021">2021</option>
-                <option value="2022">3</option>
-                <option value="2023">4</option>
-            </select>
+           <!-- <div class="input-select-month">
+              <label for="Month">Month :</label>
+              <select name="Month" id="Month">
+                  <option value=""></option>
+                  <option value="Jan">Jan</option>
+                  <option value="Feb">Feb</option>
+                  <option value="Mar">Mar</option>
+                  <option value="Apr">Apr</option>
+                  <option value="May">May</option>
+                  <option value="Jun">Jun</option>
+                  <option value="Jul">Jul</option>
+                  <option value="Aug">Aug</option>
+                  <option value="Sept">Sept</option>
+                  <option value="Oct">Oct</option>
+                  <option value="Nov">Nov</option>
+                  <option value="Dec">Dec</option>
+              </select>
+           </div> -->
+            <div class="input-select-genre">
+                  <label for="genre">Genre :</label>
+                  <select name="Year" id="Year">
+                    <option value=""></option>
+                    <?php  
+                          $sql = mysqli_query($conn, "SELECT genre_name FROM `type_genre`");
+                          if(mysqli_num_rows($sql) < 0){     
+                              echo 'No data';
+                          }elseif(mysqli_num_rows($sql) > 0){
+                              while($row = mysqli_fetch_assoc($sql)){
+                                  echo '<option value="'.$row['genre_name'].'">'.$row['genre_name'].'</option>';
+                              }
+                          }
+                    ?>
+                  </select>
+            </div>
         </div>
-        <input type="text" name="search">      
-        <div><i class="fas fa-search"></i><input name="btnsearch" type="submit" value="ค้นหา"></div>  
-      
-    </form>
+        <input type="text" name="search">   
+        <button><i class="fas fa-search"></i> </button>   
+    </div>
 
     <ul class="ul">
       <li style="padding:0 125px;">Movie</li>
@@ -56,6 +69,7 @@
       </div>
     </div>   
 </div>
+                
 <!-- <?php include_once "footer.php"; ?> -->
 <script src="JAVASCRIPT/datalist.js"></script>
 </body>

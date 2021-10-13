@@ -57,8 +57,12 @@ body{
     text-align: center;
     border-radius: 5px;
     margin-bottom: 10px;
+    width: 390px;
+    height: 40px;
+    margin-top: -100px;
     border: 1px solid #f5c6cb;
     display: none;
+    position: absolute;
 }
 .form form .name-details{
     display: flex;
@@ -156,4 +160,5 @@ form .name-details .field:last-child{
     flex-wrap:wrap ;
     position:fixed;
     background-color: rgb(22, 0, 24);
+    margin-top: 15px;
 }

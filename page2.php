@@ -7,6 +7,9 @@
 ?>
 <?php include_once "head.php"; ?>
 <!-- <?php include_once "video.php"; ?> -->
+<script>
+    document.getElementById("m2").style.color = "#ffcc00";
+</script>
 <div class="area_main page2" style="margin-top:180px;"> 
     <p>ภาพยนตร์</p>
     <div  class="container"  style="margin-left: 60px;">

@@ -17,14 +17,79 @@ $email = $_SESSION['email'];
         }
     }
 ?>
-    <div class="profile-area" style="margin-top: 110px;margin-bottom:11px;"><p>Profile</p></div>
-    <div class="profile-detail" style="margin-top: -460px;margin-bottom:11px;">
-        <div class="box-detail"><p>User name : </p><span><?php echo $row['username'];?></span></div>
-        <div class="box-detail"><p>Email : </p><span><?php echo $row['email'];?></span></div>
-        <div class="box-detail"><p>phone : </p><span><?php echo $row['phone'];?></span></div>
-        <div class="box-detail"><p>Password :</p> <span class="dot">...........</span></div>
+    <div class="profile-area" style="margin-top: 110px;margin-bottom:42px;"><p>Profile</p></div>
+    <iframe id="iframe_target" name="iframe_target" src="#" style="width:0;height:0;border:0px solid #fff;position: absolute;"></iframe>
+    <div class="profile-detail" style="margin-top: -500px;margin-bottom:11px;">
+<!-- <form action="#" method="POST" enctype="multipart/form-data" autocomplete="off"> -->
+    <!-- <a href="php/hide.php?movie_id='.$row['movie_id'].'" class="list-btn2" role="button" target="iframe_target"><i class="fas fa-minus-circle"></i></a> -->
+
+        <form action="php/edit.php" method="POST" enctype="multipart/form-data" autocomplete="off" class="box-detail detail-edit" target="iframe_target"><p>User name : </p>
+                <input type="text" value="<?php echo $row['username'];?>" id="username" name="username" disabled>
+                <div style="display:none;" id="save-name" ">
+                    <i class="fas fa-save" ></i>
+                    <input type="submit" name="submit" id="btn" value="">
+                </div>
+                <i class="fas fa-window-close"  onclick="Fhidebtn('save-name','cancel-name','edit-name','username')" style="display:none;" id="cancel-name"></i>
+                <i class="fas fa-edit" onclick="Fshowbtn('save-name','cancel-name','edit-name','username')"style="display:block;" id="edit-name"></i>
+        </form>
+
+        <form action="#" method="POST" enctype="multipart/form-data" autocomplete="off"  class="box-detail detail-edit" target="iframe_target"><p>Email : </p>
+                <input type="text" value="<?php echo $row['email'];?>" id="email" name="email" disabled>
+                <div style="display:none;" id="save-name" ">
+                    <i class="fas fa-save" style="display:none;" id="save-email"></i>                    
+                    <input type="submit" name="submit" id="btn" value="">
+                </div>
+                <i class="fas fa-window-close"  style="display:none;" id="cancel-email"></i>
+                <i class="fas fa-edit"  style="display:block;" id="edit-email"></i>
+        </form>
+
+        <form action="php/edit3.php" method="POST" enctype="multipart/form-data" autocomplete="off" class="box-detail detail-edit" target="iframe_target"><p>Phone : </p>
+                <input type="text" value="<?php echo $row['phone'];?>" id="phone" name="phone" disabled>
+                <div style="display:none;" id="save-phone" ">
+                    <i class="fas fa-save" ></i>
+                    <input type="submit" name="submit" id="btn" value="">
+                </div>
+                <i class="fas fa-window-close"onclick="Fhidebtn('save-phone','cancel-phone','edit-phone','phone')"  style="display:none;" id="cancel-phone"></i>
+                <i class="fas fa-edit" onclick="Fshowbtn('save-phone','cancel-phone','edit-phone','phone')"style="display:block;" id="edit-phone"></i>
+        </form>
+
+        <form action="php/edit4.php" method="POST" enctype="multipart/form-data" autocomplete="off" class="box-detail detail-edit" target="iframe_target"><p>Password : </p>
+                <input type="password" value="<?php echo $row['pwd'];?>" id="pwd" name="pwd" disabled>
+                <div style="display:none;" id="save-pwd" ">
+                    <i class="fas fa-save" ></i>
+                    <input type="submit" name="submit" id="btn" value="">
+                </div>
+                <i class="fas fa-window-close" onclick="Fhidebtn('save-pwd','cancel-pwd','edit-pwd','pwd')" style="display:none;" id="cancel-pwd"></i>
+                <i class="fas fa-edit" onclick="Fshowbtn('save-pwd','cancel-pwd','edit-pwd','pwd')" style="display:block;" id="edit-pwd"></i>
+        </form>
         <div class="box-detail out"><a href="php/logout.php"><i class="fas fa-sign-out-alt"></i><p>Sign out</p></a></div>
     </div>
+
+    <script>
+        document.getElementById("username").disabled = true;
+        document.getElementById("phone").disabled = true;
+        document.getElementById("pwd").disabled = true;
+       
+       
+        
+        function Fshowbtn(e1,e2,e3,name) {
+            document.getElementById(name).disabled = false;
+            document.getElementById(name).style.color = "#f5f5f5";
+            document.getElementById(name).focus();
+            document.getElementById(e1).style.display = "block"; 
+            document.getElementById(e2).style.display = "block";
+            document.getElementById(e3).style.display = "none";  
+            document.getElementById("pwd").type = "text";
+        }
+        function Fhidebtn(e1,e2,e3,name) {
+            document.getElementById(name).style.color = "#969595";
+            document.getElementById(name).disabled = true;
+            document.getElementById(e1).style.display = "none"; 
+            document.getElementById(e2).style.display = "none";
+            document.getElementById(e3).style.display = "block"; 
+            document.getElementById("pwd").type = "password"; 
+        }
+    </script>
 <!-- <?php include_once "footer.php"; ?> -->
 </body>
 </html>

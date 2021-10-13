@@ -16,7 +16,5 @@
           
         }
         // $sql = mysqli_query($conn, "UPDATE movie SET hide = '$hide' WHERE movie_id ='{$movie_id}'");
-   
-        
     }
 ?>

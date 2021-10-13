@@ -12,4 +12,4 @@ setInterval(() =>{
       }
     }
     xhr1.send();
-  }, 400);//this function will run frequently after 500ms
+  }, 100);//this function will run frequently after 500ms

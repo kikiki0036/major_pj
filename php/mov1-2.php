@@ -10,8 +10,8 @@
     $sql = mysqli_query($conn, "SELECT * FROM movie WHERE month(getindate) != month(now()) AND curdate()>getindate AND hide='{$hide}' ORDER BY `getindate` DESC") ;//แสงรายการเดือนปัจจุบันแบบเรียงข้อมูลจากรายการเข้าใหม่ไปรายการเก่า
     $output = "";
 
-    if(mysqli_num_rows($sql) == 1){
-        $output .= "No data";
+    if(mysqli_num_rows($sql) <= 0){
+        $output .= "";
     }elseif(mysqli_num_rows($sql) > 0){
         while($row = mysqli_fetch_assoc($sql)){
             $original_date = $row['getindate'];
@@ -27,6 +27,25 @@
                 $h++;
             }
             $m = $runtime;
+
+            $genre_all='';
+            $m_id = $row['movie_id'];
+            if(true){
+                $sqlgenre = mysqli_query($conn, "SELECT movie.movie_name , type_genre.genre_name FROM `movie` 
+                                            INNER JOIN `genre_movie` ON movie.movie_id=genre_movie.movie_id 
+                                            INNER JOIN `type_genre` ON type_genre.genre_id=genre_movie.genre_id   
+                                            WHERE movie.movie_id = '{$m_id}' ");
+                if(mysqli_num_rows($sqlgenre) == 1 ){
+                    while($rowgenre = mysqli_fetch_assoc($sqlgenre)){
+                        $genre_all = $genre_all.$rowgenre['genre_name'];
+                    }
+                }elseif(mysqli_num_rows($sqlgenre) > 0){
+                    while($rowgenre = mysqli_fetch_assoc($sqlgenre)){
+                        $genre_all = $genre_all.$rowgenre['genre_name'].' / ';
+                    }
+                }
+            }
+              
             $output .= '<style>
                             
                         </style>
@@ -35,14 +54,14 @@
                                 border-radius: 10px;  
                                 color: beige;">
                                 <div class="mlbc-name">'. $row['movie_name'] .'</div>
-                                <div class="mlbc-cate"><i class="fa fa-tag" aria-hidden="true" style="margin-right:5px; font-size:0.1px;"></i>'. $row['genre'] .'</div>
+                                <div class="mlbc-cate" ><i class="fa fa-tag" aria-hidden="true" style="margin-right:5px; font-size:0.1px;"></i>'.$genre_all.'</div>
                                 <div class="mlbc-time"><i class="far fa-clock" style="margin-right:5px; font-size:10px; font-weight: 200;"></i>'.$h.' ชม. '.$m.' นาที</div>
                                 <div class="mlbc-sound" style="font-size: 11px;"><i class="fa fa-volume-off" aria-hidden="true" style="margin-right:5px ;font-size:13px;"> </i> ENG / SUBTITLE</div>
                                 <div class="mlbc-cate"  style="font-size: 16px;text-transform: uppercase;color: #f018e9;text-shadow: 0 1px 1px rgba(0, 0, 0, 0.8);"><i class="fa fa-calendar-o" aria-hidden="true" style="margin-right:10px ;font-size:15px;color:#fff;"> </i>'. $new_date .' </div>
                             </div>
                             <div class="content">
                                 <div class="details">
-                                <img src="php/image/'.$row['movie_name'].'.jpg" alt="">
+                                <img src="php/image/'.$row['poster'].'" alt="">
                                 </div>
                                 <div class="movbutton"></div>
                             </div>
