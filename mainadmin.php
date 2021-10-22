@@ -52,7 +52,7 @@
                   </select>
             </div>
         </div>
-        <input type="text" name="search">   
+        <input type="text" name="search" placeholder="seaech movie name">   
         <button><i class="fas fa-search"></i> </button>   
     </div>
 

@@ -1,59 +1,107 @@
 <?php
     $output = "";
-    if(mysqli_num_rows($sql) < 0){
+    
+    if(mysqli_num_rows($sql_set_of_showtime) < 0){
         $output .= "No data";
-    }elseif(mysqli_num_rows($sql) > 0){
-        while($row = mysqli_fetch_assoc($sql)){
-
-            $original_date = $row['getindate'];
-            $timestamp = strtotime($original_date);
-            $new_date = date("d M Y", $timestamp);
-            $runtime =  $row['runtime'];
-            $h = 0;
-            $m = 0;
-            while($runtime > 60){
-                $runtime -= 60;
-                $h++;
+    }elseif(mysqli_num_rows($sql_set_of_showtime) > 0){
+        while($row = mysqli_fetch_assoc($sql_set_of_showtime)){
+            $output_showtime="";
+            if($d != ""){
+                // echo $d;
+                $sql_showtime = mysqli_query($conn, "SELECT *FROM `showtime`
+                INNER JOIN `set_of_showtime` ON set_of_showtime.setshow_id=showtime.setshow_id
+                WHERE showtime.setshow_id = '{$row['setshow_id']}' AND showtime.date_showtime LIKE '%$d%' ORDER BY `showtime`.`showtime_id` ASC");
+                
+                $zzz = mysqli_query($conn, "SELECT *FROM `showtime`
+                INNER JOIN `set_of_showtime` ON set_of_showtime.setshow_id=showtime.setshow_id
+                WHERE showtime.setshow_id = '{$row['setshow_id']}' AND showtime.date_showtime LIKE '%$d%' ORDER BY `showtime`.`showtime_id` ASC");
+            }else{
+                $sql_showtime = mysqli_query($conn, "SELECT *FROM `showtime`
+                INNER JOIN `set_of_showtime` ON set_of_showtime.setshow_id=showtime.setshow_id
+                WHERE showtime.setshow_id = '{$row['setshow_id']}'ORDER BY `showtime`.`showtime_id` ASC");
+                $zzz = mysqli_query($conn, "SELECT *FROM `showtime`
+                INNER JOIN `set_of_showtime` ON set_of_showtime.setshow_id=showtime.setshow_id
+                WHERE showtime.setshow_id = '{$row['setshow_id']}'ORDER BY `showtime`.`showtime_id` ASC");
             }
+           
+            $a = array();
+            $a2 = array();
+            $row_zzz = mysqli_fetch_assoc($zzz);
+            $date_showtime = $row_zzz['date_showtime'];
+            $new_date;
+            // echo $date_showtime;
+            if(mysqli_num_rows($sql_showtime) < 0){
+                $output_showtime .= "No data";
+            }elseif(mysqli_num_rows($sql_showtime) > 0){
+                
+                while($row_sql_showtime = mysqli_fetch_assoc($sql_showtime)){
+                    $date_showtime_n = $row_sql_showtime['date_showtime'];
+                    if( $date_showtime_n !=  $date_showtime){
+                        // echo "wow"." || ";
+                        array_push($a,$output_showtime);
+                        array_push($a2,$new_date);
+                        $output_showtime='';
+                        $date_showtime = $date_showtime_n;
+                    }
+                    $timestamp = strtotime($date_showtime_n);
+                    $new_date = date("d M Y", $timestamp);
 
-            $genre_all='';
-            $m_id = $row['movie_id'];
-            if(true){
-                $sqlgenre = mysqli_query($conn, "SELECT movie.movie_name , type_genre.genre_name FROM `movie` 
-                                            INNER JOIN `genre_movie` ON movie.movie_id=genre_movie.movie_id 
-                                            INNER JOIN `type_genre` ON type_genre.genre_id=genre_movie.genre_id   
-                                            WHERE movie.movie_id = '{$m_id}' ");
-                if(mysqli_num_rows($sqlgenre) == 1 ){
-                    while($rowgenre = mysqli_fetch_assoc($sqlgenre)){
-                        $genre_all = $genre_all.$rowgenre['genre_name'];
-                    }
-                }elseif(mysqli_num_rows($sqlgenre) > 0){
-                    while($rowgenre = mysqli_fetch_assoc($sqlgenre)){
-                      $genre_all = $genre_all.$rowgenre['genre_name'].' / ';
-                    }
+                    $original_time = $row_sql_showtime['timestart'];
+                    $times = strtotime($original_time);
+                    $new_time = date("H:i", $times);
+                    $output_showtime = $output_showtime.'<li>'.$new_time.'</li>';
+                    
                 }
+                // echo " &&& ";
+                array_push($a,$output_showtime);
+                array_push($a2,$new_date);
             }
 
-            $m = $runtime;
-            $output .= '
-                        <div class="list">
-                            <div class="details-img">
+            
+           
+            // $runtime =  $row['runtime'];
+            // $h = 0;
+            // $m = 0;
+            // while($runtime > 60){
+            //     $runtime -= 60;
+            //     $h++;
+            // }
+            // $m = $runtime;
+            $leg = count($a);
+            for($ii=0; $ii < $leg; $ii++){
+                // echo $a[$ii]." |x| ".$a2[$ii]."---";
+                $output .= ' <div class="showtime-box">
+                            <div class="box1-movie">
+                            <div class="poster">
                                 <img src="php/image/'.$row['poster'].'" alt="">
                             </div>
-                            <div class="details">
-                                <p style="font-weight: 400;">'.$row['movie_name'].'</p>
-                                <p style="font-weight: 400;font-size: 15px;">'.$new_date.'</p>
-                                <p class="d_rate" style="font-size: 12px; margin-top:-14px;">'.$row['rate'].'</p>
-                                <p style="font-size: 12px;">'.$genre_all.'</p>
-                                <p style="font-size: 12px;">'.$h.' ชม. '.$m.' นาที</p>
+                            <div class="detail-showtime">
+                                <div class="text-box title"><p>'.$row['movie_name'].'</p></div>
+                                <div class="text-box">
+                                    <ul>
+                                        <li>'.$row['lang'].'</li>
+                                        <li>'.$row['runtime'].' นาที</li>
+                                        <li>'.$row['rate'].'</li>
+                                        <li>'.$a2[$ii].'</li>
+                                    </ul>
+                                </div>
+                                <div class="timeshow">
+                                    <ul>
+                                        '.$a[$ii].'
+                                    </ul>
+                                </div>
                             </div>
-                            <div class="edit">
-                                <a href="editmovie.php?movie_id='.$row['movie_id'].'" class="list-btn" role="button"><i class="fas fa-edit"></i></a>
-                                <a href="php/hide.php?movie_id='.$row['movie_id'].'" class="list-btn2" role="button" target="iframe_target"><i class="fas fa-minus-circle"></i></a>
+                            
                             </div>
-                          
+                            <div class="box2-branch">
+                                <div style="margin-top:35px;"><i class="fas fa-map-marker-alt"></i>'.$row['branch_name'].'</div>
+                                <div style="margin-left:20px;margin-top:-5px;">'.$row['theatre_name'].'</div>
+                            </div>
                         </div>';
+            }
+                                 
         }
     }
     echo $output;
 ?>
+

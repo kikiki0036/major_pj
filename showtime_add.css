@@ -1,0 +1,528 @@
+/* <body>
+<div class="select-movie">
+    <div class="search-select-movie">
+
+    </div>
+    <div class="movie">
+
+    </div>
+</div>
+<div class="select-branch">
+   <div class="search-select-branch">
+
+   </div>
+   <div class="branch">
+
+   </div>
+</div>
+<div class="create-set-showtime">
+   <div class="form-showtime">
+
+   </div>
+</div>
+</body> */
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@200;300;400;500;600;700&display=swap');
+*{
+    text-decoration: none;
+    font-family: 'Kanit', sans-serif;
+}
+.select-movie,.select-branch,.create-set-showtime{
+    width: 1370px;
+    height: 13rem;
+}
+.select-movie{
+    background-color: rgb(16, 15, 15);    
+
+    /* background-color: rgb(26, 26, 26); */
+    display: block;
+    box-shadow: inset 0px 0px 20px rgba(0,0,0,0.9);
+    box-shadow:0px 0px 15px 1px rgba(0, 0, 0, 0.9),0px 0px 5px 2px rgba(0, 0, 0, 0.9);
+
+}
+
+.create-set-showtime{
+    background-color: rgb(16, 15, 15);    
+    display: flex;
+
+}
+.btn-next {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-size: 50px;
+    text-shadow: -2px 0 5px rgb(9, 9, 9);    
+
+}
+.next_section{
+    position: absolute;
+    margin-left: 1310px;
+    width: 60px;
+    height: 100%;
+    top: 0px;
+    display: flex;
+    align-items:  center;
+    justify-content: center;
+    opacity: 0;
+}
+.next_section:hover{    
+    -webkit-transition: all 0.4s ease 0s;
+    -moz-transition: all 0.4s ease 0s;
+    -ms-transition: all 0.4s ease 0s;
+    -o-transition: all 0.4s ease 0s;
+    transition: all 0.4s ease 0s;
+    opacity: 1;
+}
+/* <div class="select-movie">
+    <div class="search-select-movie">
+
+    </div>
+    <div class="movie">
+
+    </div>
+</div> */
+.search-select-movie{
+    width: 20%;
+    height: 10%;
+    padding: 10px 10px;
+
+}
+/* <div class="movie">
+    <div class="movie-box-area">
+        <div class="movie-box">
+        
+        </div>
+    </div>
+</div> */
+.movie{
+    width: 98.3%;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    padding: 0px 3px;
+    margin-top: 4px;
+}
+.movie-box-area{
+    width: 100%;
+    height:140px;
+    display: flex;
+    justify-content:left;
+    flex-wrap: wrap;
+    overflow: scroll; 
+    padding-left: 35px; 
+    padding-top: 5px;
+}
+:is(.movie-box-area)::-webkit-scrollbar{
+    display: none;
+    width: 0px;
+}
+.movie-box{
+    height:130px;
+    width: 90px;
+    background-color: rgb(28, 28, 28);
+    margin-bottom: 10px;
+    margin-right: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: inset 0px 0px 20px rgba(0,0,0,0.9);
+    box-shadow:0px 0px 3px 1px rgba(0, 0, 0, 0.9),0px 0px 5px 2px rgba(0, 0, 0, 0.9);
+    text-align: center;
+
+}
+.movie-box:hover{
+    -webkit-transition: all 0.4s ease 0s;
+    -moz-transition: all 0.4s ease 0s;
+    -ms-transition: all 0.4s ease 0s;
+    -o-transition: all 0.4s ease 0s;
+    transition: all 0.8s ease 0s;
+    background-color: rgb(33, 32, 32);
+    box-shadow: inset 0px 0px 20px rgba(44, 44, 44, 0.9);
+    box-shadow:0px 0px 3px 1px rgba(55, 51, 51, 0.9),0px 0px 5px 2px rgba(39, 39, 39, 0.9);
+}
+.movie-box .img-movie {
+    /* background-color: antiquewhite; */
+    height: 105px;
+    width: 75px;
+    margin-bottom: 6px;
+}
+.movie-box img{
+    height: 105px;
+    width: 75px;    
+    object-fit: cover;
+    margin-top:5px;   
+    border-radius: 5px;
+    box-shadow: inset 0px 0px 20px rgba(0,0,0,0.9);
+    box-shadow:0px 0px 15px 1px rgba(0, 0, 0, 0.9),0px 0px 5px 2px rgba(0, 0, 0, 0.9);
+}
+.movie-box p{
+   font-size: 5px;
+   color: rgb(189, 189, 189);  
+   margin-top: 2px;
+   width: 85px;
+   height:80px;
+   white-space: nowrap; 
+   overflow: hidden;
+   text-overflow: ellipsis; 
+   text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+
+}
+.form-search{
+    background-color: rgb(255, 255, 255);
+    padding: 2px 10px;
+    border-radius: 15px;
+}
+.form-search input{
+    width: 83%;
+    border: none;
+    outline: none;
+    padding: 0 7px;
+    padding-bottom: 5px
+}
+.form-search button{
+    width: 8%;
+    border: none;
+    background: none;
+    cursor: pointer;
+    /* margin-left: 15px; */
+}
+#p{
+    position: absolute;
+    font-size: 20px;
+    font-weight: 500;
+    color: beige;
+    text-shadow: 0 1px 2px rgb(9, 9, 9);    
+    top:-10px;
+    left: 300px;
+    
+}
+/* <div class="select-branch" id="section2">
+    <div class="search-select-branch">
+        <div class="form-search">  
+            <input type="text" name="search">   
+            <button><i class="fas fa-search"></i> </button>   
+        </div>
+        <p id="p1">SELECT &nbsp; BRANCH &nbsp; TO &nbsp; CREATE &nbsp; SHOWTIME</p>
+    </div>
+            <div class="branch">
+                <div class="branch-box-area">
+                    <div class="branch-box">
+                      <!-- <img src="php/image/A Quiet Place Part II.jpg" alt="">
+                      <p>A Quiet Place Part II</p> -->
+                    </div>      
+                </div>
+            </div>
+    <div class="next_section">
+    <a href="#section3" class="btn-next" ><i class="fas fa-chevron-right"></i></a>
+    </div>         
+</div> */
+.select-branch{
+    background-color: rgb(16, 15, 15);    
+
+    /* background-color: rgb(26, 26, 26); */
+    display: block;
+    box-shadow: inset 0px 0px 20px rgba(0,0,0,0.9);
+    box-shadow:0px 0px 15px 1px rgba(0, 0, 0, 0.9),0px 0px 5px 2px rgba(0, 0, 0, 0.9);
+
+}
+.search-select-branch{
+    width: 20%;
+    height: 10%;
+    padding: 10px 10px;
+}
+#p1{
+    position: absolute;
+    font-size: 20px;
+    font-weight: 500;
+    color: beige;
+    text-shadow: 0 1px 2px rgb(9, 9, 9); 
+    top:-10px;    
+    left: 1680px;
+    width: 30%;
+}
+.branch{
+    width: 98.3%;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    padding: 0px 3px;
+    margin-top: 4px;
+    margin-left: 6px;
+}
+.branch-box-area{
+    width: 100%;
+    height:140px;
+    display: flex;
+    justify-content:left;
+    flex-wrap: wrap;
+    overflow: scroll; 
+    padding-left: 27px; 
+    padding-top: 5px;
+}
+
+:is(.branch-box-area)::-webkit-scrollbar{
+    display: none;
+    width: 0px;
+}
+.branch-box{
+    height:50px;
+    width: 250px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: rgb(28, 28, 28);
+    box-shadow: inset 0px 0px 20px rgba(0,0,0,0.9);
+    box-shadow:0px 0px 3px 1px rgba(0, 0, 0, 0.9),0px 0px 5px 2px rgba(0, 0, 0, 0.9);
+}
+.branch-box:hover{
+    -webkit-transition: all 0.4s ease 0s;
+    -moz-transition: all 0.4s ease 0s;
+    -ms-transition: all 0.4s ease 0s;
+    -o-transition: all 0.4s ease 0s;
+    transition: all 0.8s ease 0s;
+    background-color: rgb(22, 20, 20);
+    box-shadow: inset 0px 0px 20px rgba(10, 10, 10, 0.9);
+    box-shadow:0px 0px 3px 1px rgba(28, 25, 25, 0.9),0px 0px 5px 2px rgba(17, 16, 16, 0.9);
+}
+.branch-box-area img{
+    width: 30px;
+    height: 41px;
+    margin-left: 20px;
+    text-shadow: 0 1px 2px rgb(9, 9, 9); 
+}
+.branch-box-area p{
+    font-size: 15px;
+    color: rgb(162, 162, 162);
+    margin-left: 20px;
+    width: 160px;
+    text-shadow: 0 1px 2px rgb(9, 9, 9); 
+
+}
+/* <div class="create-set-showtime" id="section3">
+    <form action="">
+        <div class="detail-movie">
+            <div class="box1">
+                <img src="php/image/BLACKPINK THE MOVIE.jpg" alt="">
+            </div>
+            <div class="box1">
+            <p>movie name</p>
+            <p>genre1 / genre2 /</p>
+            <div class="box2">
+                <p>rate</p>
+                <p>runtime</p>
+            </div>
+            </div>
+        </div>
+    </form>
+    <div class="next_section">
+    <a href="#section1" class="btn-next" ><i class="fas fa-chevron-right"></i></a>
+    </div>
+</div> */
+form{
+    width: 100%;
+    height: 200px;
+    background-color: rgb(16, 15, 15);    
+    display: flex;
+    box-shadow: inset 0px 0px 20px rgba(0,0,0,0.9);
+    box-shadow:0px 0px 3px 1px rgba(0, 0, 0, 0.9),0px 0px 5px 2px rgba(0, 0, 0, 0.9);
+}
+.detail-movie{
+    height: 185px;
+    width: 25%;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    margin-left: 100px;
+}
+.detail-movie img{
+    width: 110px;
+    height: 155px;
+    border-radius: 5px;
+    box-shadow: inset 0px 0px 20px rgba(0,0,0,0.9);
+    box-shadow:0px 0px 15px 1px rgba(0, 0, 0, 0.9),0px 0px 5px 2px rgba(0, 0, 0, 0.9);
+} 
+.detail-movie ul,.detail-movie li{
+    list-style: none;
+}
+.detail-movie li{
+   font-size: 15px;
+   padding: 0 0;
+   width: 200px;
+   margin-left: -20px;
+   color: rgb(255, 255, 255);
+   font-weight: 300;
+} 
+.detail-movie .box1{
+    display: block;
+
+}
+.detail-movie .box2{
+    display: flex;
+}
+.text {
+    height: 150px;
+}
+.detail-movie p{
+    margin-left: -250px;
+    margin-top: 40px;
+    font-size: 15px;
+    color: rgb(255, 255, 255);
+    font-weight: 300;
+}
+.date-showtime{
+    height: 185px;
+    width: 37%;
+}
+.field{
+    display: flex;
+    height: 25px;
+    color: rgb(255, 255, 255);
+    margin-left: 57px;
+}
+.input input{
+    margin: 0 10px;
+}
+.input label {
+    position: absolute;
+    top: 5px;
+    margin-left: 80px;
+    width: 170px;
+    text-align: center;
+    margin-top: 10px;
+}
+.button input{
+    padding: 10px 80px;
+    padding-top:-20px ;
+    height: 90px;
+    margin-left: -475px;
+    margin-top: 80px;
+    font-size: 50px;
+    font-weight: 500;
+    position: absolute;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    color: rgb(232, 232, 232);
+    background-color: rgb(22, 20, 20);
+    box-shadow: inset 0px 0px 20px rgba(0,0,0,0.9);
+    box-shadow:0px 0px 3px 1px rgba(0, 0, 0, 0.9),0px 0px 5px 2px rgba(0, 0, 0, 0.9);
+}
+.button input:hover{
+    -webkit-transition: all 0.4s ease 0s;
+    -moz-transition: all 0.4s ease 0s;
+    -ms-transition: all 0.4s ease 0s;
+    -o-transition: all 0.4s ease 0s;
+    transition: all 0.8s ease 0s;
+    color: rgb(255, 255, 255);
+    background-color: rgb(28, 28, 28);
+    box-shadow: inset 0px 0px 20px rgba(10, 10, 10, 0.9);
+    box-shadow:0px 0px 3px 1px rgba(28, 25, 25, 0.9),0px 0px 5px 2px rgba(17, 16, 16, 0.9);
+
+}
+input[type="date"] {
+    /* background: transparent; */
+    /* background: rgb(177, 13, 136); */
+    color: rgb(135, 135, 135);
+    background-color: rgb(22, 20, 20);
+    border: none;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(100%);
+    cursor: pointer;
+}
+.inputdetail {
+    position: absolute;
+    margin-left: 125px;
+    margin-top: 85px;
+    font-size: 13px;
+}
+.inputdetail select{
+    width: 85px;
+    height: 23px;
+    color: rgb(135, 135, 135);
+    background-color: rgb(22, 20, 20);
+    border: none;
+    outline: none;
+}
+.inputdetail div{
+   margin-left: 5px;
+
+}
+.inptshowtime{
+    width: 295px;
+    height: 150px;
+    margin-left: 480px;
+    margin-top: -50px;
+    overflow: scroll;
+    color: rgb(135, 135, 135);
+}
+:is(.inptshowtime)::-webkit-scrollbar{
+    display: none;
+    width: 0px;
+
+}
+.inptshowtime input{
+    width: 100px;
+    color: rgb(135, 135, 135);
+    background-color: rgb(22, 20, 20);
+    border: none;
+    text-align: center;
+}
+.inptshowtime div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+input[type="time"] {
+    color: rgb(135, 135, 135);
+    background-color: rgb(22, 20, 20);
+    border: none;
+    text-align: center;
+}
+
+input[type="time"]::-webkit-calendar-picker-indicator {
+    filter: invert(100%);
+    cursor: pointer;
+}
+.inputidmovie{
+    position: absolute;
+    display: flex;
+    width: 100px;
+    margin-top: 140px;
+    margin-left: 130px;
+    font-size: 13px;
+
+}
+.inputidbranch label,.inputidmovie label{
+   margin-top: 3px;
+}
+.inputidbranch input,.inputidmovie input{
+    width:20px;
+    margin-left: 15px;
+    border: none;
+    outline: none;
+    background-color: rgb(22, 20, 20);
+}
+.inputidbranch{
+    position: absolute;
+    display: flex;
+    width: 100px;
+    margin-top: 140px;
+    margin-left: 230px;
+    font-size: 13px;
+}
+#m-name {
+    white-space: nowrap; 
+    overflow: hidden;
+    text-overflow: ellipsis; 
+    /* background-color: darkorange; */
+}
+.text #genre {
+    white-space: nowrap; 
+    overflow: hidden;
+    text-overflow: ellipsis; 
+}

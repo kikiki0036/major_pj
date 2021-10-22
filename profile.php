@@ -30,12 +30,12 @@ $email = $_SESSION['email'];
 
         <form action="#" method="POST" enctype="multipart/form-data" autocomplete="off"  class="box-detail detail-edit" target="iframe_target"><p>Email : </p>
                 <input type="text" value="<?php echo $row['email'];?>" id="email" name="email" disabled>
-                <div style="display:none;" id="save-name" ">
+                <!-- <div style="display:none;" id="save-name" ">
                     <i class="fas fa-save" style="display:none;" id="save-email"></i>                    
                     <input type="submit" name="submit" id="btn" value="">
                 </div>
                 <i class="fas fa-window-close"  style="display:none;" id="cancel-email"></i>
-                <i class="fas fa-edit"  style="display:block;" id="edit-email"></i>
+                <i class="fas fa-edit"  style="display:block;" id="edit-email"></i> -->
         </form>
 
         <form action="php/edit3.php" method="POST" enctype="multipart/form-data" autocomplete="off" class="box-detail detail-edit" target="iframe_target"><p>Phone : </p>

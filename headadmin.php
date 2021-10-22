@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Miner Cineplex</title>
+    <title>Minor Cineplex</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
     <link rel="stylesheet" href="menu_bar.css">
     <link rel="shortcut icon" type="images/x-icon" href="php/image/icon_m.png">
@@ -42,6 +42,7 @@
             width: 90%;
             height: 455px;
             overflow: scroll;
+            
         }
 
         .table .edit {
@@ -87,6 +88,7 @@
         .list img {
             width: 135px;
             height: 190px;
+
             margin-top: 5px;
             margin-right: -60px;
             border-radius: 3px;
@@ -533,7 +535,7 @@
             font-weight: 400;
             }
 
-            .area_main .form .filter label {
+            .area_main .form label {
             font-size: 15px;
             color: rgb(21, 21, 21);
             text-shadow: none;

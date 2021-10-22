@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="shortcut icon" type="images/x-icon" href="php/image/icon_m.png">
 
-    <title>Miner Cineplex</title>
+    <title>Minor Cineplex</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
     <link rel="stylesheet" href="menu_bar.css">
     <style>
@@ -35,7 +35,7 @@
         <div class="containerprofile" id="conp" style="display:none;">
             <ul id="dropp">
                 <li><a href="profile.php">PROFILE</a></li>
-                <li><a href="">TICKET</a></li>
+                <li><a href="book.php">TICKET</a></li>
             </ul>
         </div>
         <script>

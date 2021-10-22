@@ -5,7 +5,7 @@
     $sql = mysqli_query($conn, "SELECT * FROM branch WHERE region_id ='bangkok'");
     $output = "";   
     if(mysqli_num_rows($sql) <= 0){
-        $output .= "No users are available to chat";
+        $output .= "No data";
     }elseif(mysqli_num_rows($sql) > 0){
         while($row = mysqli_fetch_assoc($sql)){
             $output .= '<div class="area-branch-box">

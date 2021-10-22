@@ -34,6 +34,7 @@ header {
     opacity: 0.85;
       z-index: 11;
 }
+
 header nav {
     width: 100%;
     display: flex;
@@ -167,10 +168,11 @@ header nav li a:hover:after {
     /* background: aqua;  */
     margin-left: -240px; 
     box-shadow: inset 0px 0px 20px rgba(0,0,0,0.9);
+    box-shadow:0px 0px 15px 1px rgba(0, 0, 0, 0.9),0px 0px 5px 2px rgba(0, 0, 0, 0.9);
+
     /* box-shadow: 10px 10px 10px -11px rgba(255, 246, 246, 0.1),
     10px 10px 10px -11px rgba(233, 91, 240, 0.5); */
 
-    box-shadow:0px 0px 15px 1px rgba(0, 0, 0, 0.9),0px 0px 5px 2px rgba(0, 0, 0, 0.9);
     /* z-index: 3; */
 }
 
@@ -971,8 +973,13 @@ img.mlb-img {
 
 .list-btn-p:hover {
     margin-left: 20px;
-    color: #ffdf28;
-    text-shadow: 0 0 7px rgb(255, 204, 0);
+    -webkit-transition: all 0.4s ease 0s;
+    -moz-transition: all 0.4s ease 0s;
+    -ms-transition: all 0.4s ease 0s;
+    -o-transition: all 0.4s ease 0s;
+    transition: all 0.4s ease 0s;
+    color: #292929;
+    text-shadow: 0 0 7px  rgb(202, 0, 202);
 }
 
 .opt{
@@ -1133,10 +1140,49 @@ img.mlb-img {
     </div>
    
 </div> */
+/* <div class="showtime-box">
+    <div class="box1-movie">
+    <div class="poster">
+        <img src="php/image/Eternals.jpg" alt="">
+    </div>
+    <div class="detail-showtime">
+        <div class="text-box title"><p>Eternals</p></div>
+        <div class="text-box">
+            <p>ENG</p>
+            <p>132 นาที</p>
+            <p>น 13+</p>
+        </div>
+        <div class="timeshow">
+            <nav>17:30</nav>
+            <nav>20:30</nav>
+            <nav>22:30</nav>
+        </div>
+    </div>
+    
+    </div>
+    <div class="box2-branch">
+        
+    </div>
+</div> */
+.showtime-list {
+    display: flex;
+    flex-wrap: wrap;
+    width: 90%;
+    height:490px;    
+    overflow: auto;  
+    /* background-color: #468669; */
+}
+
+:is(.showtime-list)::-webkit-scrollbar {
+    display: none;
+    width: 0px;
+}
+
 .area-showtime{
     background-color: tomato;
     width: 100%;
     height: 550px;
+    
 }
 .area-showtime p{
      margin-left: 90px;
@@ -1144,7 +1190,7 @@ img.mlb-img {
      font-weight: 500;
 }
 .showtime{
-    background-color: teal;
+    /* background-color: teal; */
     width: 90%;
     height:fit-content;
     margin-left: 5%;
@@ -1153,7 +1199,933 @@ img.mlb-img {
     padding: 10px 20px;
 }
 .showtime-box{
-    background-color: rgb(71, 114, 255);
-    height: 7rem;
+    /* background-color: rgb(71, 114, 255); */
+    height: 10rem;
+    width: 37.5rem;
+    margin-left: .5rem;
+    display: flex;
+    opacity: 0.8;
+    margin-top: 0px;
+    margin-bottom: 3px;
+}
+.box1-movie{
+    background-color: #242424;
+    height: 100%;
+    width: 70%;
+    border-radius: 0 20px 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 5px 5px;
+    background-color: rgba(19, 19, 19, 0.816); 
+    box-shadow: inset 0px 0px 25px rgba(0, 0, 0, 0.9);
+    border: 2px solid rgb(21, 20, 20);
+    border-right:2px dotted  rgb(255, 255, 255);
+}
+
+.box1-movie .poster {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30%;
+    height: 100%;
+}
+.box1-movie .detail-showtime{
+    width: 65%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-left: 5px;
+
+}
+.box1-movie .poster img{
+    height: 130px;
+    width: 90px;
+    box-shadow: inset 0px 0px 50px rgba(0, 0, 0, 0.9);
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.9);
+}
+.detail-showtime .text-box {
+    display: flex;
+    width: 100%;
+    height: fit-content;
+    height: 30%;
+}
+.detail-showtime .timeshow {
+    display: flex;
+    width: 100%;
+    height: 70%;
+}
+.title p{
+    font-size: 16px;
+    margin-left: 0px;
+    margin-top: 0.2rem;
+    white-space: nowrap; 
+    overflow: hidden;
+    text-overflow: ellipsis; 
+}
+.detail-showtime .text-box ul{
+    display: flex;
+    list-style: none;  
+    margin-left: -0.8rem;  
+}
+.detail-showtime .text-box li{
+    font-size: 12px;
+    margin-left: 1rem;
+    margin-bottom: 0px;
+}
+.detail-showtime .timeshow ul{
+   display: flex;
+   flex-wrap: wrap;
+   list-style: none;
+   margin-left: -10px;
+   margin-top: -3px; 
+}
+.detail-showtime .timeshow li{
+    font-size: 12px;
+    margin-left: 10px;
+    width: 50px;
+    height: 28px;
+    text-align: center;
+    padding-top:4px ;
+    border-radius: 5px;
+    margin-top: 0px;
+
+    box-shadow: 0 3px 6px rgba(0,0,0,.16), 0 2px 3px rgba(110,80,20,.4);
+    background-image: linear-gradient(160deg, #a50798, #b411af, #e132e1, #b41bbc, #a507a0);
+    border: 1px solid #9d07a5;
+    color: rgb(255, 255, 255);
+    text-shadow: 0 1px 8px rgba(216, 42, 173, 0.8);
+    font-weight: 600;
+}
+.box2-branch{
+    background-color: #242424;
+    height: 100%;
+    width: 30%;
+    border-radius: 20px 0 0 20px;
+    background-color: rgba(19, 19, 19, 0.816); 
+    box-shadow: inset 0px 0px 25px rgba(0, 0, 0, 0.9);
+    border: 2px solid rgb(21, 20, 20);
+    border-left:2px dotted rgb(255, 255, 255) ;
+    padding: 5px 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.box2-branch div{
+    height: 40%;
+    margin-left:7px;
+    display: flex;
+    font-size: 13px;
+    overflow: hidden;
+    text-overflow: ellipsis; 
+    width: 155px;
+}
+.box2-branch div i{
+    font-size: 10px;
+    margin-top: 5px;
+    margin-right: 5px;
+}
+.iframe_add_showtime{
+    height: 11.5rem;
+    width: 100%;
+    position: absolute;
+    margin-top: -184px;
+    box-shadow:0px 0px 50px 1px rgba(0, 0, 0, 0.9);
+    border: none;
+}
+.add-btndown{
+    position: absolute;
+    font-size: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -220px;
+    width: 100%;
+    text-align: center;
+    
+}
+.add-btndown:hover{
+    -webkit-transition: all 0.4s ease 0s;
+    -moz-transition: all 0.4s ease 0s;
+    -ms-transition: all 0.4s ease 0s;
+    -o-transition: all 0.4s ease 0s;
+    transition: all 0.4s ease 0s;
+    color: rgb(255, 255, 255);
+    margin-top: -230px;
+    
+}
+.add-btnup{
+    position: absolute;
+    font-size: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: -90px;
+    width: 100%;
+    text-align: center;
+    cursor: pointer;
+}
+.add-btnup:hover{
+    -webkit-transition: all 0.4s ease 0s;
+    -moz-transition: all 0.4s ease 0s;
+    -ms-transition: all 0.4s ease 0s;
+    -o-transition: all 0.4s ease 0s;
+    transition: all 0.4s ease 0s;
+    color: rgb(255, 255, 255);
+    margin-top: -100px;
+}
+.add-btndown p,.add-btnup p{
+    font-size: 20px;
+    margin-top: -30px;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+    
+}
+.add-btndown p{
+    font-size: 20px;
+    margin-bottom: -30px;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+}
+.add-btndown i,.add-btnup i{
+    cursor: pointer;
+    text-shadow: 0 0 50px rgba(0, 0, 0, 0.919);
+}
+.btn-ticket{
+    position: absolute;
+    height: 40px;
+    width: 145px;
+    color: #ebebeb;
+    right: 80px;
+    text-align: center;
+    margin-top: -35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid beige;
+    -webkit-transition: all 0.4s ease 0s;
+    -moz-transition: all 0.4s ease 0s;
+    -ms-transition: all 0.4s ease 0s;
+    -o-transition: all 0.4s ease 0s;
+    transition: all 0.4s ease 0s;
+    text-shadow: none;
+    cursor: pointer;
+    font-weight: 500;
+}
+.btn-ticket:hover{
+    color: #040404;
+    border: 1px solid rgb(255, 255, 255);
+    background-color: beige;
+    -webkit-transition: all 0.4s ease 0s;
+    -moz-transition: all 0.4s ease 0s;
+    -ms-transition: all 0.4s ease 0s;
+    -o-transition: all 0.4s ease 0s;
+    transition: all 0.4s ease 0s;
+}
+/* <div class="ticket">
+    <div class="seq">
+
+    </div>
+    <div class="date_showtime">
+
+    </div>
+    <div class="branch_showtime">
+
+    </div>
+    <div class="seat_area">
+
+    </div>
+    <div class="detail_1">
+
+    </div>
+</div> */
+.ticket{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: fit-content;
+    background-color: rgb(29, 29, 29);
+    box-shadow: inset 0px 0px 20px rgba(0,0,0,0.9);
+    box-shadow:0px 0px 15px 1px rgba(0, 0, 0, 0.9),0px 0px 5px 2px rgba(0, 0, 0, 0.9);
+    margin-top: 330px;
+    padding-top: 20px;
+}
+.ticket .seq{
+    height: 10%;
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.seq div{
+    background-color: cornsilk;
+    width: 90%;
+    height: 65px;
+    border-radius: 999px;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+}
+.seq div nav{
+    width: 450px;
+    height: 65px;
+}
+.seq div nav p{
+    color: rgb(28, 28, 28);
+    text-shadow: none;
+    font-size: 17px;
+    font-weight: 500;
+}
+.seq div .nav1 p{
+    margin-top: 20px;
+    margin-left: 110px;
+}
+.seq div .nav2 p{
+    margin-top: 20px;
+    margin-left: 150px;
+}
+.seq div .nav3 p{
+    margin-top: 20px;
+    margin-left: 200px;
+}
+.seq div .nav1{
+    position: absolute;
+    border-radius: 999px;
+    margin-left: -660px;
+    box-shadow:0px 0px 3px 0px rgba(0, 0, 0, 0.9);
+    background-color: rgb(201, 201, 201);
+    border: none;
+}
+.seq div .nav2{
+    position: absolute;
+    border-radius: 999px;
+    box-shadow:0px 0px 3px 0px rgba(0, 0, 0, 0.9);
+    background-color: rgb(255, 255, 255);
+    border: none;
+}
+.seq div .nav3{
+    position: absolute;
+    border-radius: 999px;
+    margin-right: -660px;
+    box-shadow:0px 0px 3px 0px rgba(0, 0, 0, 0.9);
+    background-color: rgb(255, 255, 255);
+    border: none;
+}
+.ticket .date_showtime{
+    height: 22%;
+    width: 1230px;
+    display: flex;
+    align-items: center;
+    overflow-x:auto ;
+    margin-top: 15px;
+}
+:is(.date_showtime)::-webkit-scrollbar{
+    width: 0px;
+    cursor: pointer;
+}
+.today{
+    position: absolute;
+    margin-left: 28px;
+    margin-top: -105px;
+    text-shadow: 0 0 3px rgba(0, 0, 0, 0.919);
+}
+.box_slide{
+    width: fit-content;
+    height: 100px;
+    padding: 5px;
+    display: flex;
+    margin-top: 20px;
+}
+.box_slide .box{
+    background-color: rgb(26, 26, 26);
+    height: 80px;
+    width: 90px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow:0px 0px 5px 0px rgba(0, 0, 0, 0.9);
+    border-radius: 10px;
+    border: none;
+    margin-right: 20px;
+    cursor: pointer;
+}
+.box_slide .box:hover{
+    background-color: rgb(21, 20, 20);
+    box-shadow:0px 0px 10px 0px rgba(0, 0, 0, 0.9);
+}
+.box_slide .box p{
+    font-size: 18px;
+    color: rgb(221, 0, 221);
+    text-shadow:none;
+}
+.ticket .branch_showtime{
+    /* background-color: rgb(95, 160, 122); */
+    height: fit-content;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.branch_slide{
+    background-color: rgb(19, 19, 19);
+    box-shadow:0px 0px 5px 3px rgba(0, 0, 0, 0.9);
+    width: 100%;
+    height: 500px;
+    display: inline-block;
+    /* flex-wrap: wrap; */
+    justify-content: center;
+    overflow-y: auto;
+    padding-left: 85px;
+    padding-top: 15px;
+}
+.branch_slide .box .box-in-1 {
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    background-color: rgb(26, 24, 24);
+    height: 4rem;
+    box-shadow:0px 0px 3px 0px rgba(0, 0, 0, 0.9);
+    cursor: pointer;
+}
+.branch_slide .box .box-in-2{
+    background-color: rgb(26, 24, 24);
+    height: 9.25rem;
+    border-top:2px solid rgb(44, 44, 44);
+    box-shadow:0px 0px 3px 0px rgba(0, 0, 0, 0.9);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;    
+}
+.box-in-2-detail-showtime li{
+    margin-right: 15px;
+}
+.box-in-2-box-showtime li{
+    margin-right: 15px;
+    font-size: 12px;
+    width: 50px;
+    height: 28px;
+    text-align: center;
+    padding-top:4px ;
+    border-radius: 5px;
+    margin: 4px;    
+    margin-left: 5px;
+    box-shadow: 0 3px 6px rgba(0,0,0,.16), 0 2px 3px rgba(110,80,20,.4);
+    /* background-color: rgb(223, 223, 223); */
+    background-image: linear-gradient(160deg, #a50798, #b411af, #e132e1, #b41bbc, #a507a0);
+    border: 1px solid #9d07a5;
+    color: rgb(255, 255, 255);
+    text-shadow: 0 1px 8px rgba(216, 42, 173, 0.8);
+    font-weight: 600;
+    cursor: pointer;
+}
+.box-in-2-detail-showtime{
+    display: flex;
+    padding: 5px 30px;
+    /* margin-top: 20px; */
+}
+.box-in-2-box-showtime{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0px 30px;
+    margin-top: 5px;
+    width:80%;
+    height: fit-content;
+}
+.branch_slide .box .box-in-1 p{
+    font-size: 15px;
+    color: #fdfdfd;
+    padding-left: 15px;
+}
+.branch_slide .box .box-in-1 img{
+    height: 50px;
+    width: 40px;
+}
+:is(.branch_slide)::-webkit-scrollbar{
+    width: 0px;
+}
+.branch_slide .box{
+    float: left;
+    background-color: gainsboro;
+    width: 45%;
+    height: fit-content;
+    margin-right: 30px;
+    margin: 5px;
+}
+
+.ticket .seat_area{
+    /* background-color: rgb(0, 157, 123); */
+    height: 35rem;
+    width: 90%;
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+}
+.seat-area{
+    background-color: rgb(15, 16, 15);
+    height: 33rem;
+    width: 70%;
+    box-shadow:0px 0px 5px 3px rgba(0, 0, 0, 0.9);
+    display: flex;
+    flex-direction: column;
+}
+.SCREEN{
+    background-color: rgb(26, 24, 24);
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(218, 12, 201);
+    text-shadow: 0 1px 5px rgba(216, 42, 173, 0.8);
+    box-shadow:0px 0px 5px 3px rgba(0, 0, 0, 0.9);
+
+}
+.detail-ticket-area {
+    background-color: rgb(15, 16, 15);
+    border: 1px solid rgb(218, 218, 218);
+    height:fit-content;
+    width: 28%;
+    padding: 10px 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 15px;
+    border-radius: 10px;
+}
+
+.detail-movie-ticket{
+    height: 10rem;
+    width: 95%;
+}
+.detail-showtime-ticket{
+    height: 8rem;
+    width: 95%;
+    /* background-color: rgb(7, 172, 164); */
+}
+.detail-ticket{
+    height: 6rem;;
+    width: 95%;
+}
+.btn-detail-ticket{
+    height: 4rem;
+    width: 95%;
+}
+/* <div class="seat_area">
+    <div class="seat-area">
+        <p class="SCREEN">SCREEN</p>
+
+    </div>
+    <div class="detail-ticket-area">
+        <div class="detail-movie-ticket">
+
+        </div>
+        <div class="detail-showtime-ticket">
+
+        </div>
+        <div class="detail-ticket">
+
+        </div>
+        <div class="btn-detail-ticket">
+
+        </div>
+    </div>
+</div> */
+.book-area{
+    width: 90%;
+    height: 35rem;
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+}
+.book-area form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+.detail-book-ticket{
+    width: 32%;
+    height: 95%;
+    margin: 0 0;
+    box-shadow:0px 0px 5px 3px rgba(0, 0, 0, 0.9);
+    border: none;
+
+    /* margin-right:-5px ; */
+}
+.detail-book-ticket .detail-movie-ticket{
+    margin-bottom:25px ;
+}
+.detail-book-ticket .detail-showtime-ticket{
+    margin-bottom:140px ;
+    width: 85%;
+}
+.detail-book-ticket .detail-ticket{
+    width: 85%;
+}
+.detail-book-comboset{
+    width: 35%;
+    height: 95%;
+    margin: 0 10px;
+    box-shadow:0px 0px 5px 3px rgba(0, 0, 0, 0.9);
+    border: none;
+    /* background-color: rgb(255, 247, 0); */
+}
+.btn-book{
+    width: 30%;
+    height: 95%;
+    margin: 0 0;
+    box-shadow:0px 0px 5px 3px rgba(0, 0, 0, 0.9);
+    border: none;
+    /* background-color: rgb(255, 0, 111); */
+}
+/* <div class="book-area">
+    <form action="">
+        <div class="detail-ticket-area">
+            <div class="detail-movie-ticket">
+
+            </div>
+            <div class="detail-showtime-ticket">
+
+            </div>
+            <div class="detail-ticket">
+
+            </div>
+            <div class="btn-detail-ticket">
+
+            </div>
+       </div>
+        <div class="detail-book-comboset">
+            
+        </div>
+        <div class="btn-book">
+
+        </div>
+    </form>
+</div> */
+.detail-ticket-area .detail-movie-ticket{
+    display: flex;
+}
+.detail-movie-ticket .img-ticket{
+    width: 35%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.detail-movie-ticket .img-ticket img{
+    height: 130px;
+    width: 98px;
+    border-radius: 7px;
+    box-shadow:0px 0px 5px 1px rgba(0, 0, 0, 0.9);
+}
+.detail-movie-ticket ul{
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
+    margin-left: 5px;
+    width: 65%;
+}
+.detail-movie-ticket ul li{
+    margin-bottom: 5px;
+    font-size: 13px;
+    width: 195px;
+}
+.detail-showtime-ticket{
+    padding: 1px 5px;
+    font-size: 15px;
+}
+.detail-showtime-ticket ul{
+    display: flex;
+}
+.detail-showtime-ticket li{
+    margin-bottom: 5px;
+}
+#thea{
+    font-size: 13px;
+}
+.detail-showtime-ticket ul li{
+    font-size: 13px;
+    margin-right: 15px;
+}
+#showtime{
+    border-bottom: 1px solid beige;
+}
+.detail-ticket{
+    display: flex;
+    padding: 1px 15px;
+    justify-content: space-between;
+
+}
+#seat{
+    width: 150px;
+}
+.detail-ticket ul{
+    display: flex;
+    flex-direction: column;
+
+}
+.detail-ticket ul li{
+
+    white-space: wrap; 
+}
+.btn-detail-ticket {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.btn-detail-ticket div{
+    width: 140px;
+    padding: 7px 20px;
+    text-align: center;
+    cursor: pointer;
+    justify-content: center;
+    color: rgb(255, 255, 255);
+    background-color: rgb(237, 2, 190);
+    border-radius: 8px;
+    box-shadow:0px 0px 3px 1px rgba(44, 38, 44, 0.9);
+}
+.seat-area-box{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;    
+}
+.box-seat-box{
+    width: 70%;
+    height:fit-content;
+    display: inline-block;
+    margin-top: 5px;
+}
+.detail-seat{
+    /* background-color: chartreuse; */
+    height: 12%;
+    width: 170px;
+    margin-top: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.detail-seat div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.box-seat-box i{
+    position: absolute;
+    font-size: 14px;
+    color: rgb(247, 204, 34);
+}
+.detail-seat div img{
+    height: 35px;
+    width: auto;
+}
+.detail-seat div p{
+    font-size: 10px;
+    color: rgb(250, 206, 29);
+    text-shadow: 0 1px 5px rgba(216, 42, 173, 0.8);
+}
+.seat-box p{
+    position: absolute;
+    font-weight: 600;
+}
+.seat-box img{
+    height:25px;
+    width: auto;
+    position: absolute;
+}
+.seat-box{
+    float: left;
+    height:30px;
+    width: 30px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 5px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px;
+    box-shadow:0px 0px 3px 1px rgba(218, 1, 218, 0.9);
+
+}
+.comboset{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 5%;
+    width: 100%;
+    padding: 8px 0;
+}
+.comboset-box{
+    height: 80%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+.price-all-set{
+    height: 15%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+
+}
+.box-set{
+    height: 19%;
+    width: 95%;
+    display: flex;
+    align-items: center;
+    padding: 0 8px;
+    /* justify-content: ; */
+}
+.box-set .box-img-set{
+    height: 100%;
+    width: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.box-set .box-img-set img{
+    height: 80px;
+    width: auto;
+}
+.box-set .detail-set{
+    height: 100%;
+    width: 55%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.box-set .count-set{
+    height: 100%;
+    width: 22%;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+}
+.box-set .count-set input{
+    width: 25px;
+    text-align: center;
+    margin: 0 5px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+}
+.box-set .count-set i{
+    cursor: pointer;
+}
+.price-all-set{
+    display: flex;
+    align-items: center;
+    justify-content: right;
+}
+.price-all-set label{
+    width: 60px;
+    height: 20px;
+    margin-right: 20px;
+    text-align: right;
+}
+.btn-book-f input{
+    background-color: crimson;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border: none;
+    background-color: rgb(232, 0, 205);
+    color: rgb(255, 255, 255);
+    padding: 10px 50px;
+    margin-top: 50px;
+    position: absolute;
+    right: 195px;
+    cursor: pointer;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 500;
+}
+.abc{
+    position: absolute;
+    margin-left: 80px;
+    margin-bottom:45px;
+    margin-top: -80px;
+}
+.abc li{
+    margin-top: 6px;
+}
+.abcs{
+    position: absolute;
+    margin-left: 500px;
+    margin-bottom: -50px;
+}
+.abcs li{
+    margin-top: 8px;
+}
+/* 
+<div class="detail-book-comboset detail-ticket-area ">
+    <div class="comboset">
+         <p>Concession Pick Up</p>
+    </div>
+    <div class="comboset-box">
+        <div class="box-set">
+            <div class="box-img-set">
+                <img src="php/image/ONE SET.png" alt="">
+            </div>
+            <div class="detail-set">
+                <p>ONE SET</p>
+                <p>130 บาท</p>
+            </div>
+            <div class="count-set">
+                <i class="far fa-minus-square"></i>
+                <input type="text" name="count-set" placeholder="0">
+                <i class="far fa-plus-square"></i>
+            </div>
+        </div>
+    </div>
+    <div class="price-all-set">
+        ราคารวมทั้งหมด: <input type="text" name="total-price">
+    </div>
+</div> */
+
+/* <ul>
+    <li><img src="php/image/A Quiet Place Part II.jpg" alt=""></li>
+    <li>A Quiet Place Part II</li>
+    <li>17 10 22</li>
+</ul> */
+
+.book {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 70%;
+    width: 70%;
+    margin-left: 195px;
+    margin-top: -490px;
+    position: absolute;
+}
+.book ul{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 5px;
+    padding: 3px 10px;
+    width: 80%;
+    height: 80px;
+    background-color: rgb(230, 230, 230);
+    border-radius: 10px; 
+    color: rgb(51, 51, 51);
+    text-shadow: none;
+}
+.book  img{
+    height: 65px;
+    width: 48px;
+    border-radius: 5px;
+    text-shadow: 0 1px 5px rgba(79, 79, 79, 0.8);
 
 }

@@ -10,7 +10,7 @@
     <div class="bgform"></div>
     <div class="wrapper">
         <section class="form login">
-            <header >Miner</header>
+            <header >Minor</header>
             <form action="#" autocomplete="off">
                 <div class="error-txt"></div>
                 <div class="field input">

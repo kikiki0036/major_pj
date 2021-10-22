@@ -23,7 +23,7 @@
        </ul>
     </div>
    
-    <iframe id="iframe_page3" name="iframe_page3" src="page3-1.php"></iframe>
+    <iframe id="iframe_page3" name="iframe_page3" src="page3-1.php" scrolling="no"></iframe>
      <!-- <div  class="containerpage3"  style="">
       <div class="area-branch" ">    
           <div class="area-branch-box">

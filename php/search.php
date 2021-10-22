@@ -28,7 +28,7 @@
                 }
     }else if(strlen($m)==1){
        $sql = mysqli_query($conn, "SELECT * FROM `movie` 
-                                   WHERE movie_name LIKE '%$m%' AND hide = '{$hide}' ORDER BY `getindate` ASC");
+                                   WHERE movie_name LIKE '$m%' AND hide = '{$hide}' ORDER BY `getindate` ASC");
     }else{
        $sql = mysqli_query($conn, "SELECT * FROM `movie` 
                                    WHERE hide = '{$hide}' AND movie_name LIKE '%$m%' OR rate LIKE '%$m%' ORDER BY `getindate` ASC");
